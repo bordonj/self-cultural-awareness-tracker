@@ -41,3 +41,4 @@ Is there anything else you'd like your instructor to know?
 - retrieve old lessons on cultural diversity and social justice
 
 8:10 - 10: research Firebase for hosting
+10 - 12: read more into Firebase and NoSQL
