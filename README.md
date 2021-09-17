@@ -1,7 +1,7 @@
 # self-cultural-awareness-tracker
 Capstone
-
-## Overall Review
+```
+Overall Review
 Name of Student: Jennifer Bordon
 
 Name of Project: Self-/Cultural-Awareness Tracker
@@ -33,6 +33,7 @@ What additional tools, frameworks, libraries, APIs, or other resources will thes
 Is there anything else you'd like your instructor to know?
 
 - N/A
+```
 
 ## Research & Planning Log
 ### Friday 09/17/21
@@ -50,3 +51,7 @@ Is there anything else you'd like your instructor to know?
 
 1 - 3: review Epicodus lessons relevant to capstone
 - e.g., React, React with Redux, JS intermediate
+
+4 - 5: continue Epicodus lessons review 
+- React with Redux review
+- Setting up Firebase Project
