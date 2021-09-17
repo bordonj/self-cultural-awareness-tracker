@@ -38,7 +38,10 @@ Is there anything else you'd like your instructor to know?
 ### Friday 09/17/21
 8:00: plan out to-dos
 - trello board
-- retrieve old lessons on cultural diversity and social justice
+  - https://trello.com/b/JVqFOsnc/planner
+- retrieve old lessons on ECPY360 - cultural diversity and social justice
 
 8:10 - 10: research Firebase for hosting
+
 10 - 12: read more into Firebase and NoSQL
+- download all my old slides/readings from ECPY360 course
