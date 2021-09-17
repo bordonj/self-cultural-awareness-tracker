@@ -45,3 +45,8 @@ Is there anything else you'd like your instructor to know?
 
 10 - 12: read more into Firebase and NoSQL
 - download all my old slides/readings from ECPY360 course
+
+12: lunch!
+
+1 - 3: review Epicodus lessons relevant to capstone
+- e.g., React, React with Redux, JS intermediate
