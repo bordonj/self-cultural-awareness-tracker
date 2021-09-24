@@ -57,5 +57,7 @@ Is there anything else you'd like your instructor to know?
 - Setting up Firebase Project
 
 Friday 09/24/21
-8:10-10: start the `create-react-app` 
+8:10 - 10: start the `create-react-app` 
 - add Firebase and Firestore database
+10 - 12: work more with adding Firebase/Firestore
+- also add more with components
