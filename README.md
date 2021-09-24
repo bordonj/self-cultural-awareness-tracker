@@ -67,3 +67,5 @@ Is there anything else you'd like your instructor to know?
 
 1 - 3: work on user interface
 - work on CRUD for journals
+- was trying work on UI but got stuck trying to debug how to update to the latest firebase
+  - WIP on firebase version update!
