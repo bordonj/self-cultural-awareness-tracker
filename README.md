@@ -56,8 +56,14 @@ Is there anything else you'd like your instructor to know?
 - React with Redux review
 - Setting up Firebase Project
 
-Friday 09/24/21
+### Friday 09/24/21
 8:10 - 10: start the `create-react-app` 
 - add Firebase and Firestore database
+
 10 - 12: work more with adding Firebase/Firestore
 - also add more with components
+
+12: lunch!
+
+1 - 3: work on user interface
+- work on CRUD for journals
