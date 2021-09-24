@@ -58,3 +58,4 @@ Is there anything else you'd like your instructor to know?
 
 Friday 09/24/21
 8:10-10: start the `create-react-app` 
+- add Firebase and Firestore database
