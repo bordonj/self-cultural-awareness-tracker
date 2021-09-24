@@ -69,3 +69,5 @@ Is there anything else you'd like your instructor to know?
 - work on CRUD for journals
 - was trying work on UI but got stuck trying to debug how to update to the latest firebase
   - WIP on firebase version update!
+
+3 - 5: troubleshoot how to use the latest firebase/firestore to add to collection
