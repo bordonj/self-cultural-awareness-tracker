@@ -55,3 +55,6 @@ Is there anything else you'd like your instructor to know?
 4 - 5: continue Epicodus lessons review 
 - React with Redux review
 - Setting up Firebase Project
+
+Friday 09/24/21
+8:10-10: start the `create-react-app` 
