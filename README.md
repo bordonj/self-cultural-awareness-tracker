@@ -71,3 +71,9 @@ Is there anything else you'd like your instructor to know?
   - WIP on firebase version update!
 
 3 - 5: troubleshoot how to use the latest firebase/firestore to add to collection
+
+
+### Friday 09/24/21
+8 - 12: research more React - make sure I understand how to implement
+- components
+  - class, hooks, redux
