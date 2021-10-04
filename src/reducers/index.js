@@ -1,7 +1,9 @@
 import { combineReducers } from "redux";
-import { firestoreReducer } from "react-redux-firebase";
+import { firestoreReducer } from "redux-firestore";
+// import formVisibleReducer from "./form-visible-reducer";
 
 const rootReducer = combineReducers({
+  // formVisibleOnPage: formVisibleReducer,
   firestore: firestoreReducer
 });
 
