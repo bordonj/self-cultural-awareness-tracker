@@ -8,9 +8,13 @@ const Lessons = () => {
 
   const onTitleClick = idx => {
     console.log('title clicked', idx);
-    setActiveIndex(idx);
+    if (idx === activeIndex) {
+      setActiveIndex(-1);
+    }
+    else {
+      setActiveIndex(idx);
+    }
   }
-
   
   useFirestoreConnect([
     { collection: "lessons"}
@@ -18,16 +22,8 @@ const Lessons = () => {
   
   const lessons = useSelector((state) => state.firestore.ordered.lessons);
   
-  console.log(lessons)
-
-
-
-
-
   if (isLoaded(lessons)) {
     const renderedItems = lessons.map((lesson, i) => {
-
-  
       return (
         <React.Fragment key={lesson.key}>
           < hr/>
@@ -46,7 +42,6 @@ const Lessons = () => {
                 >
                   <i className="dropdown icon"></i>
                   {key}
-                {/* {key} - {lesson.definitions[i]} */}
                 </div>
                 <div className={`content ${active}`} >
                   <p>{lesson.definitions[i]}</p>
