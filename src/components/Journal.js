@@ -15,17 +15,20 @@ const Journal = () => {
 
   useEffect(() => {
     const fetchJournalEntries = async () => {
-      const response = firestore.collection('users').doc(uid).collection('journalEntries');
-      const data = await response.get();
-      data.docs.map(item => {
-        let newItem = item.data();
-        setEntries(oldArray => [...oldArray, newItem]);
-        console.log('journal entry', item.data())
-      })
+      const response = uid ? firestore.collection('users').doc(uid).collection('journalEntries'): '';
+      const data = uid? await response.get(): '';
+      if (data) {
+        data.docs.map(item => {
+          let newItem = item.data();
+          setEntries(oldArray => [...oldArray, newItem]);
+          console.log('journal entry', item.data())
+        })
+      }
     }
     fetchJournalEntries();
   }, [])
-
+  
+  console.log('entry arr', entries)
 
   // hooks
   const [seeForm, setSeeForm] = useState(false);
@@ -39,7 +42,10 @@ const Journal = () => {
 
   if (seeForm === true) {
     return (
-      <NewJournalEntry onNewJournalEntry={onClickSetForm} setForm={() => {onClickSetForm(seeForm)}}/>
+      <NewJournalEntry 
+        onNewJournalEntry={onClickSetForm} 
+        setForm={() => {onClickSetForm(seeForm)}} 
+      />
     )
   }
   return (
@@ -48,7 +54,7 @@ const Journal = () => {
     {entries.map((entry, i) => {
       return (
           <div key={i}>
-            <h1>{entry.title}</h1>
+            <h1>TITLE: {entry.title}</h1>
           </div>
         )
       })}
