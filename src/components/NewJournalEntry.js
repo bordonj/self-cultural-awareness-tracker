@@ -4,10 +4,8 @@ import { useFirestore } from "react-redux-firebase";
 import firebase from "firebase/app";
 
 const NewJournalEntry = (props) => {
-  console.log('new journal entry props', props)
   const firestore = useFirestore();
   const auth = firebase.auth();
-  console.log('new journal entry auth', auth)
   
   function addJournalEntryToFirestore(event) {
     event.preventDefault();
