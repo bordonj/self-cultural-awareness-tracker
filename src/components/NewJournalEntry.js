@@ -9,6 +9,7 @@ const Margin = styled.div`
 `;
 
 const NewJournalEntry = (props) => {
+  console.log('nje', props)
   const firestore = useFirestore();
   const auth = firebase.auth();
   
@@ -36,7 +37,8 @@ const NewJournalEntry = (props) => {
     <button className="ui teal button" onClick={() => {props.setForm()}}>Go back</button>
 
       <ReusableForm 
-        hello="poop"
+        state={props.state}
+        setState={props.changeState}
         submitForm={addJournalEntryToFirestore}
       />
     </Margin>

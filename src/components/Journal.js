@@ -18,6 +18,7 @@ const Journal = () => {
   const uid = localStorage.getItem('uid');
   const firestore = useFirestore();
   // hooks
+  const [state, setState] = useState(false);
   const [seeForm, setSeeForm] = useState(false);
   const [selectedEntry, setSelectedEntry] = useState(null);
   const [entries, setEntries] = useState([])
@@ -35,7 +36,11 @@ const Journal = () => {
       }
     }
     fetchJournalEntries();
-  }, [])
+  }, [state])
+
+  const changeState = (state) => {
+    setState(!state)
+  }
 
   console.log('JOURNAL ENTRY', selectedEntry)
 
@@ -48,6 +53,8 @@ const Journal = () => {
   if (seeForm === true) {
     return (
       <NewJournalEntry 
+        state={state}
+        changeState={changeState}
         onNewJournalEntry={onClickSetForm} 
         setForm={() => {onClickSetForm(seeForm)}} 
       />
@@ -69,7 +76,16 @@ const Journal = () => {
       />
       </>
     )
-  } else if (selectedEntry === null) {
+  } else if (!uid) {
+    return (
+      <>
+      <Margin>
+        <h1>Access Denied.</h1>
+      </Margin>
+      </>
+    )
+
+  }else if (selectedEntry === null ) {
     console.log('63', selectedEntry)
     return (
       <>
@@ -77,6 +93,7 @@ const Journal = () => {
         <h1>Your Journal Entries</h1>
         <hr />
         <EntryList 
+          state={state}
           selectedEntry={selectedEntry} 
           setSelectedEntry={setSelectedEntry} 
           entryList={entries}/>

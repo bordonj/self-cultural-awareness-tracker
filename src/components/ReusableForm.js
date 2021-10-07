@@ -1,8 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import PropTypes from "prop-types";
 
 const ReusableForm = (props) => {
-  console.log(props)
+  const [state, setState] = useState(props.state);
+  console.log('reusableform', props)
   return (
     <React.Fragment>
       <div className="ui inverted segment">
@@ -59,7 +60,7 @@ const ReusableForm = (props) => {
                 name='otherside'
                 placeholder='How might the other person have felt/reacted?' />
               </div>
-          <button className="ui button" type='submit'>Submit</button>
+          <button onClick={() => {setState(state)}} className="ui button" type='submit'>Submit</button>
         </form>
       </div>
     </React.Fragment>
