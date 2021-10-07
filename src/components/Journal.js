@@ -10,65 +10,52 @@ import { connect } from "react-redux";
 
 const Journal = () => {
   const uid = localStorage.getItem('uid');
-  console.log('uid', uid)
-  useFirestoreConnect([
-    { collection: 'users'}
-  ]);
+  const fake = [];
   
   const firestore = useFirestore();
-  
 
-  // const journals = useSelector(state => state.firestore.ordered.users)
-  const journals = useSelector(state => state.firestore.ordered.users)
-  console.log('journals', journals)
+  const [entries, setEntries] = useState([])
 
-  const sfRef = firestore.collection('users').doc(uid);
-  const collections = async () => {
-    await sfRef.listCollections();
-  };
-  console.log('collections', collections)
-  // collections.forEach(collection => {
-  //   console.log('Found subcollection with id:', collection.id);
-  // });
+  useEffect(() => {
+    const fetchJournalEntries = async () => {
+      const response = firestore.collection('users').doc(uid).collection('journalEntries');
+      const data = await response.get();
+      data.docs.map(item => {
+        let newItem = item.data();
+        // const updateEntries = [
+        //   ...entries,
+        //   {
+        //     // id: entries.length + 1,
+        //     ...newItem
+        //   }
+        // ];
+        // setEntries([...entries, item.data()])
+        setEntries(oldArray => [...oldArray, newItem]);
+        // setEntries(updateEntries);
+        console.log('journal entry', item.data())
+        fake.push(item.data());
+      })
+    }
+    fetchJournalEntries();
+  }, [])
+  console.log('blahbs', entries)
+  console.log('fake', fake)
 
-  // const getJournals = () => {
-  //   let docs =  firestore.collection('users').doc(uid).collection('journalEntries').doc('ArqR9HClYfrE2VxuWCZA').get()
-  //     .then(res => {
-  //       console.log('OMGAHDKAHASDFA', res)
-  //     })
-  //     .catch(err => {
-  //       console.log(err)
-  //     });
-  //   console.log('docs', docs)
-  // };
-  // getJournals();
-
-  const [blogs,setBlogs] = useState([])
-  const fetchBlogs = async () => {
-    const response = firestore.collection('users').doc(uid).collection('journalEntries');
-    const data = await response.get();
-    data.docs.forEach(item=>{
-    // setBlogs([...blogs, item.data()])
-    console.log(item.data())
+  const showJournal = () => {
+    fake.map(entry => {
+      return (
+        <>
+          <div key={entry.title}        className="item">
+            <div className="content">
+              <div className="header">
+                {entry.title}
+              </div>
+            </div>
+          </div>
+        </>
+      )
     })
   }
-  useEffect(() => {
-    fetchBlogs();
-  }, [])
-  console.log('blahbs', blogs)
-
-  // const getJournal = () => {
-  //   firestore.collection('users').doc(uid).collection('journalEntries').get()
-  //     .then(response => {
-  //       response.forEach(document => {
-  //         console.log('mASFAJDF', document)
-  //       });
-  //     })
-  //     .catch(error => {
-  //       console.log(error)
-  //     });
-  // }
-  // getJournal();
 
   // hooks
   const [seeForm, setSeeForm] = useState(false);
@@ -88,6 +75,13 @@ const Journal = () => {
   return (
     <>
     <h1>Your Journal Entries</h1>
+    {entries.map((entry, i) => {
+      return (
+          <div key={i}>
+            <h1>{entry.title}</h1>
+          </div>
+        )
+      })}
     <hr />
     <button className="ui button" onClick={() => {onClickSetForm(seeForm)}}>Add new entry</button>
     </>
