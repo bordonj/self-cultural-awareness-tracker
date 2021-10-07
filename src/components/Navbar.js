@@ -34,6 +34,7 @@ function Navbar({ firebase, currUser }){
       <Link to="/" className="item">Home</Link>
       <Link to="/journal" className="item">Journal</Link>
       <Link to="/lessons" className="item">Lessons</Link>
+      <Link to="/profile" className="item">Profile</Link>
       <Link user={currentUser} to="/signin" className="item right">{currentUser}</Link>
     </div>
   );
