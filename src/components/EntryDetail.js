@@ -1,10 +1,23 @@
 import React from 'react'
+import { Margin } from './Lessons';
 
-function EntryDetail() {
+function EntryDetail(props) {
+  const { entry } = props;
+
   return (
-    <div>
-      <h1>hi</h1>
-    </div>
+    <>
+    <Margin>
+      <h1>Title: {entry.title}</h1>
+      <p>incident: {entry.incident}</p>
+      <p>feeling: {entry.feeling}</p>
+      <p>reaction: {entry.reaction}</p>
+      <p>other side: {entry.otherside}</p>
+      <p>Title: {entry.title}</p>
+      <p>reflection: {entry.reflection}</p>
+      <p>lessons learned: {entry.lessonslearned}</p>
+      <button className="ui button grey" onClick={props.backToList}>back to journals</button>
+    </Margin>
+    </>
   )
 }
 
