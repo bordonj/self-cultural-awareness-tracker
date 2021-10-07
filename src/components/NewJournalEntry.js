@@ -4,13 +4,15 @@ import { useFirestore } from "react-redux-firebase";
 import firebase from "firebase/app";
 
 const NewJournalEntry = (props) => {
+  console.log('new journal entry props', props)
   const firestore = useFirestore();
   const auth = firebase.auth();
   console.log('new journal entry auth', auth)
   
   function addJournalEntryToFirestore(event) {
     event.preventDefault();
-    return firestore.collection('users').doc(auth.currentUser.uid).set({
+    props.setForm();
+    return firestore.collection('users').doc(auth.currentUser.uid).collection('journalEntries').add({
       title: event.target.title.value,
       feeling: event.target.feeling.value,
       incident: event.target.incident.value, 
