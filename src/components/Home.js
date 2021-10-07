@@ -36,7 +36,10 @@ const Home = (props) => {
       return (
         <>
         <Margin>
-          <h1>Welcome {user}</h1>
+          <h1>Hi {user}! Welcome to "Know Myself":</h1> 
+          <p>This is an app to help users better understand themselves, biases, and triggers better. All with the ultimate goal of becoming better people.</p>
+          <p>Here, you can keep track of your own reactions to controversial topics.</p>
+          <p>There's also access to some lessons (unfinished), but it's a start!</p>
         </Margin>
         </>
       )
