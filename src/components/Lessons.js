@@ -72,7 +72,9 @@ const Lessons = () => {
   } else {
     return (
       <>
-        <h3>Must be signed in to access Lessons</h3>
+      <Margin>
+        <h1>Access Denied.</h1>
+      </Margin>
       </>
     )
   }
