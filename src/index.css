@@ -5,9 +5,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-/* html {
-  margin: 0 7%;
-} */
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -25,7 +22,6 @@ code {
   color: rgb(97, 97, 97);
 }
 .signin-ui {
-  /* background-color: pink; */
   margin: auto;
   width: 70%;
   min-width: 300px;
