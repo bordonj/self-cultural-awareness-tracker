@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { withFirestore, isLoaded } from 'react-redux-firebase';
+import styled from "styled-components";
+
+const Margin = styled.div`
+  margin: 0 10%;
+`;
 
 const Home = (props) => {
   console.log('home props', props)
@@ -34,7 +39,9 @@ const Home = (props) => {
     } else {
       return (
         <>
-        <h1>Welcome.</h1>
+        <Margin>
+          <h1>Welcome, please sign in to access features.</h1>
+        </Margin>
         </>
       )
     }

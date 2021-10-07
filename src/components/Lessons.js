@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { withFirestore, useFirestoreConnect, isLoaded } from "react-redux-firebase";
 import { useSelector } from "react-redux";
+import styled from "styled-components";
+const Margin = styled.div`
+  margin: 0 10%;
+`;
 
 const Lessons = () => {
   const [activeIndex, setActiveIndex] = useState('');
@@ -26,8 +30,7 @@ const Lessons = () => {
     const renderedItems = lessons.map((lesson, i) => {
       return (
         <React.Fragment key={lesson.key}>
-          < hr/>
-          {lesson.id}
+          <h3>{lesson.id}</h3>
           {lesson.keys.map((key, i) => {
               console.log(lesson.definitions)
               const active = key === activeIndex ? 'active' : '';
@@ -58,26 +61,11 @@ const Lessons = () => {
 
     return (
       <>
-      <hr />
-      {/* {lessons.map(lesson => {
-        return (
-          <div key={lesson.id}>
-            {lesson.id}
-            <br />
-            {lesson.keys.map((key,i) => {
-              console.log(lesson.definitions)
-              return (
-                <li key={key}>
-                {key} - {lesson.definitions[i]}
-                </li>
-              )
-            })}
-          </div>
-        )
-      })} */}
-      <div className="ui styled accordion">
-        {renderedItems}
-      </div>
+      <Margin>
+        <div className="ui styled accordion">
+          {renderedItems}
+        </div>
+      </Margin>
       </>
     )
   } else {

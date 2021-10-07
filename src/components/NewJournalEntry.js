@@ -2,6 +2,11 @@ import React from "react";
 import ReusableForm from "./ReusableForm";
 import { useFirestore } from "react-redux-firebase";
 import firebase from "firebase/app";
+import styled from "styled-components";
+
+const Margin = styled.div`
+  margin: 0 10%;
+`;
 
 const NewJournalEntry = (props) => {
   const firestore = useFirestore();
@@ -26,13 +31,16 @@ const NewJournalEntry = (props) => {
 
   return (
     <>
-      
+    <Margin>
+
     <button className="ui teal button" onClick={() => {props.setForm()}}>Go back</button>
 
       <ReusableForm 
         hello="poop"
         submitForm={addJournalEntryToFirestore}
       />
+    </Margin>
+      
     </>
   )
 }

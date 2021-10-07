@@ -6,7 +6,11 @@ import firebase from "firebase/app";
 import axios from "axios";
 import { compose } from "redux";
 import { connect } from "react-redux";
+import styled from "styled-components";
 
+const Margin = styled.div`
+  margin: 0 10%;
+`;
 
 const Journal = () => {
   const uid = localStorage.getItem('uid');
@@ -50,6 +54,8 @@ const Journal = () => {
   }
   return (
     <>
+    <Margin>
+
     <h1>Your Journal Entries</h1>
     {entries.map((entry, i) => {
       return (
@@ -60,6 +66,7 @@ const Journal = () => {
       })}
     <hr />
     <button className="ui button" onClick={() => {onClickSetForm(seeForm)}}>Add new entry</button>
+    </Margin>
     </>
   )
 }
