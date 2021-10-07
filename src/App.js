@@ -6,6 +6,7 @@ import Lessons from "./components/Lessons";
 import Home from "./components/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import axios from "axios";
+import Profile from "./components/Profile";
 
 const App = () => {
   const [user, setUser] = useState();
@@ -42,6 +43,9 @@ const App = () => {
         </Route>
         <Route path="/lessons">
           <Lessons />
+        </Route>
+        <Route path="/profile">
+          <Profile />
         </Route>
         <Route path="/">
           <Home currUser={user}/>
