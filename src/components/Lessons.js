@@ -45,7 +45,6 @@ const Lessons = () => {
                 </div>
                 <div className={`content ${active}`} >
                   <p>{lesson.definitions[i]}</p>
-                  <p>{i}</p>
                 </div>
                 </>
                 
@@ -84,7 +83,7 @@ const Lessons = () => {
   } else {
     return (
       <>
-        <h3>Loading...</h3>
+        <h3>Must be signed in to access Lessons</h3>
       </>
     )
   }
