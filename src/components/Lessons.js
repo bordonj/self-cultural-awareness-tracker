@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { withFirestore, useFirestoreConnect, isLoaded } from "react-redux-firebase";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
-const Margin = styled.div`
+
+export const Margin = styled.div`
   margin: 0 10%;
 `;
 
