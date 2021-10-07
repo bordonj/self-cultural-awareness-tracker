@@ -53,27 +53,38 @@ const Journal = () => {
       />
     )
   }
+
+  const changeEntryToList = () => {
+    setSelectedEntry(null);
+  }
+
   if (selectedEntry) {
     return (
       <>
-      <EntryDetail/>
+      <EntryDetail
+        entry={selectedEntry}
+        backToList={changeEntryToList}
+        // onClickingDelete={handleDelete}
+        // onClickingEdit={handleEdit}
+      />
+      </>
+    )
+  } else if (selectedEntry === null) {
+    console.log('63', selectedEntry)
+    return (
+      <>
+      <Margin>
+        <h1>Your Journal Entries</h1>
+        <hr />
+        <EntryList 
+          selectedEntry={selectedEntry} 
+          setSelectedEntry={setSelectedEntry} 
+          entryList={entries}/>
+        <button className="ui button" onClick={() => {onClickSetForm(seeForm)}}>Add new entry</button>
+      </Margin>
       </>
     )
   }
-  console.log('63', selectedEntry)
-  return (
-    <>
-    <Margin>
-      <h1>Your Journal Entries</h1>
-      <hr />
-      <EntryList 
-        selectedEntry={selectedEntry} 
-        setSelectedEntry={setSelectedEntry} 
-        entryList={entries}/>
-      <button className="ui button" onClick={() => {onClickSetForm(seeForm)}}>Add new entry</button>
-    </Margin>
-    </>
-  )
 }
 
 export default Journal;
