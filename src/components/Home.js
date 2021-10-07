@@ -26,14 +26,18 @@ const Home = (props) => {
   if(!isLoaded(auth)) {
     return (
       <>
-      <h1>Loading...</h1>
+      <Margin>
+        <h1>Loading...</h1>
+      </Margin>
       </>
     )
   } else {
     if (user) {
       return (
         <>
-        <h1>welcome {user}</h1>
+        <Margin>
+          <h1>Welcome {user}</h1>
+        </Margin>
         </>
       )
     } else {
