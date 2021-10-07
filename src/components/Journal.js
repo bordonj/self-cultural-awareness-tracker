@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import NewJournalEntry from "./NewJournalEntry";
+import EntryList from "./EntryList";
+import EntryDetail from "./EntryDetail";
 import { useFirestoreConnect, useFirestore, isLoaded, firestoreConnect } from "react-redux-firebase";
 import { useSelector } from "react-redux";
 import firebase from "firebase/app";
@@ -15,6 +17,9 @@ const Margin = styled.div`
 const Journal = () => {
   const uid = localStorage.getItem('uid');
   const firestore = useFirestore();
+  // hooks
+  const [seeForm, setSeeForm] = useState(false);
+  const [selectedEntry, setSelectedEntry] = useState(null);
   const [entries, setEntries] = useState([])
 
   useEffect(() => {
@@ -25,24 +30,20 @@ const Journal = () => {
         data.docs.map(item => {
           let newItem = item.data();
           setEntries(oldArray => [...oldArray, newItem]);
-          console.log('journal entry', item.data())
+          // console.log('journal entry', item.data())
         })
       }
     }
     fetchJournalEntries();
   }, [])
-  
-  console.log('entry arr', entries)
 
-  // hooks
-  const [seeForm, setSeeForm] = useState(false);
-  const [seeJournal, setSeeJournal] = useState(true)
-  const [journalEntries, setJournalEntries] = useState([]);
+  console.log('JOURNAL ENTRY', selectedEntry)
 
   const onClickSetForm = (bool) => {
     setSeeForm(!bool);
     console.log('seeForm', seeForm)
   }
+
 
   if (seeForm === true) {
     return (
@@ -52,20 +53,24 @@ const Journal = () => {
       />
     )
   }
+  if (selectedEntry) {
+    return (
+      <>
+      <EntryDetail/>
+      </>
+    )
+  }
+  console.log('63', selectedEntry)
   return (
     <>
     <Margin>
-
-    <h1>Your Journal Entries</h1>
-    {entries.map((entry, i) => {
-      return (
-          <div key={i}>
-            <h1>TITLE: {entry.title}</h1>
-          </div>
-        )
-      })}
-    <hr />
-    <button className="ui button" onClick={() => {onClickSetForm(seeForm)}}>Add new entry</button>
+      <h1>Your Journal Entries</h1>
+      <hr />
+      <EntryList 
+        selectedEntry={selectedEntry} 
+        setSelectedEntry={setSelectedEntry} 
+        entryList={entries}/>
+      <button className="ui button" onClick={() => {onClickSetForm(seeForm)}}>Add new entry</button>
     </Margin>
     </>
   )
