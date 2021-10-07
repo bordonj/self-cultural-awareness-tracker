@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import NewJournalEntry from "./NewJournalEntry";
 
 const Journal = () => {
   const [seeForm, setSeeForm] = useState(false);
@@ -8,6 +9,12 @@ const Journal = () => {
   const onClickSetForm = (bool) => {
     setSeeForm(!bool);
     console.log('seeForm', seeForm)
+  }
+
+  if (seeForm === true) {
+    return (
+      <NewJournalEntry onNewJournalEntry={onClickSetForm}/>
+    )
   }
   return (
     <>
