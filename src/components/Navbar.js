@@ -11,16 +11,6 @@ function Navbar({ firebase, currUser }){
   console.log(currUser);
 
 
-  // useEffect(() => {
-  //   // const loggedInUser = localStorage.getItem("user");
-  //   // if (loggedInUser) {
-  //   //   console.log(loggedInUser)
-  //   //   const foundUser = loggedInUser
-  //   //   setCurrentUser(foundUser);
-  //   setCurrentUser(currUser);
-  //   console.log('navbar currentUser', currentUser);
-  // }, [currentUser]);
-
   useEffect(() => {
     setInterval(() => {
       const user = localStorage.getItem("user");
@@ -28,14 +18,23 @@ function Navbar({ firebase, currUser }){
       }, [])
   }, 5000);
 
+  function doSignOut() {
+    firebase.auth().signOut().then(() => {
+      console.log('successfully signout!');
+      localStorage.clear();
+    }).catch(error => {
+      console.log(error.message);
+    });
+  }
+
   if (typeof currentUser === 'string') {
   console.log(typeof currentUser)
   return (
     <div className="ui secondary pointing menu" id="navbar">
-    <Link to="/" className="item">Home</Link>
-    <Link to="/journal" className="item">Journal</Link>
-    <Link to="/lessons" className="item">Lessons</Link>
-    <Link user={currentUser} to="/signin" className="item right">{currentUser}</Link>
+      <Link to="/" className="item">Home</Link>
+      <Link to="/journal" className="item">Journal</Link>
+      <Link to="/lessons" className="item">Lessons</Link>
+      <Link user={currentUser} to="/signin" className="item right">{currentUser}</Link>
     </div>
   );
   } else {
