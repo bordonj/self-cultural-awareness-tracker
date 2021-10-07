@@ -5,9 +5,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-html {
+/* html {
   margin: 0 7%;
-}
+} */
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -30,6 +30,19 @@ code {
   width: 70%;
   min-width: 300px;
 }
-/* .right.item .ui.input {
-  width:auto;
-} */
+#navbar {
+  background-color: black;
+  color: white;
+}
+#navbar .item {
+  color: white;
+  font-weight: bolder;
+  transition-duration: .3s;
+}
+#navbar .item:hover {
+  color: rgb(155, 193, 193);
+  font-weight: bolder;
+}
+#shorten-navbar {
+  margin: 0 3%;
+}
