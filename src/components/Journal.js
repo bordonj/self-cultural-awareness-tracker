@@ -10,10 +10,7 @@ import { connect } from "react-redux";
 
 const Journal = () => {
   const uid = localStorage.getItem('uid');
-  const fake = [];
-  
   const firestore = useFirestore();
-
   const [entries, setEntries] = useState([])
 
   useEffect(() => {
@@ -22,40 +19,13 @@ const Journal = () => {
       const data = await response.get();
       data.docs.map(item => {
         let newItem = item.data();
-        // const updateEntries = [
-        //   ...entries,
-        //   {
-        //     // id: entries.length + 1,
-        //     ...newItem
-        //   }
-        // ];
-        // setEntries([...entries, item.data()])
         setEntries(oldArray => [...oldArray, newItem]);
-        // setEntries(updateEntries);
         console.log('journal entry', item.data())
-        fake.push(item.data());
       })
     }
     fetchJournalEntries();
   }, [])
-  console.log('blahbs', entries)
-  console.log('fake', fake)
 
-  const showJournal = () => {
-    fake.map(entry => {
-      return (
-        <>
-          <div key={entry.title}        className="item">
-            <div className="content">
-              <div className="header">
-                {entry.title}
-              </div>
-            </div>
-          </div>
-        </>
-      )
-    })
-  }
 
   // hooks
   const [seeForm, setSeeForm] = useState(false);
