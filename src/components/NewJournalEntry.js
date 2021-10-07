@@ -10,6 +10,7 @@ const NewJournalEntry = (props) => {
   function addJournalEntryToFirestore(event) {
     event.preventDefault();
     props.setForm();
+    // props.onUpdateJournal();
     return firestore.collection('users').doc(auth.currentUser.uid).collection('journalEntries').add({
       title: event.target.title.value,
       feeling: event.target.feeling.value,
@@ -25,6 +26,9 @@ const NewJournalEntry = (props) => {
 
   return (
     <>
+      
+    <button className="ui teal button" onClick={() => {props.setForm()}}>Go back</button>
+
       <ReusableForm 
         hello="poop"
         submitForm={addJournalEntryToFirestore}
