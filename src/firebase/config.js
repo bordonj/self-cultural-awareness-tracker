@@ -14,11 +14,11 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 // give authentication instance
-const auth = app.auth(); 
+export const auth = firebase.initializeApp (firebaseConfig).auth(); 
 
 // initialize storage and firestore service
 const projectStorage = firebase.storage();
 const projectFirestore = firebase.firestore();
 const timestamp = firebase.firestore.FieldValue.serverTimestamp;
 
-export { auth, projectStorage, projectFirestore, timestamp };
+export { projectStorage, projectFirestore, timestamp };
