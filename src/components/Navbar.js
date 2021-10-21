@@ -26,7 +26,7 @@ const Navbar = () => {
           </div>
           <div className="login">
             <Link to="/login" onClick={logout}>Logout</Link>
-            <Link to="/profile">Email Placeholder</Link>
+            <Link to="/profile">{currentUser.email}</Link>
           </div>
         </>
       }
