@@ -17,7 +17,7 @@ const useFirestore = (collection, uid) => {
         setLoading(false);
       });
 
-    return () => unsub();
+    return unsub;
 
   }, [collection, uid])
 
