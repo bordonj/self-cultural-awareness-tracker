@@ -21,10 +21,13 @@ const BlogDetails = () => {
 
   const handleDelete = async e => {
     e.preventDefault();
+    let response = window.confirm('Are you sure you want to delete this?')
+    if (response) {
+      await projectFirestore.collection('users').doc(uid).collection('journalEntries').doc(id).delete();
+  
+      history.push('/entries');
+    }
 
-    await projectFirestore.collection('users').doc(uid).collection('journalEntries').doc(id).delete();
-
-    history.push('/entries');
   }
 
 
@@ -53,11 +56,13 @@ const BlogDetails = () => {
             <p>Title: {doc.title}</p>
             <p>reflection: {doc.reflection}</p>
             <p>lessons learned: {doc.lessonslearned}</p>
-            <Link to="/entries">
-              <button className="ui button grey">back to journals</button>
-            </Link>
-            <button onClick={() => setEditForm(true)}>Edit Entry</button>
-            <button onClick={handleDelete}>Delete Entry</button>
+            <div className="details-links">
+              <Link to="/entries">
+                <button className="d-link">Back to Entries</button>
+              </Link>
+              <button className="d-link" onClick={() => setEditForm(true)}>Edit Entry</button>
+              <button className="d-link" onClick={handleDelete}>Delete Entry</button>
+            </div>
           </div>
         </Card>
       }  
