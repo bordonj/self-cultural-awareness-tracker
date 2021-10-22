@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import BlogList from './components/BlogList';
+import BlogDetails from './components/BlogDetails';
 import { AuthProvider } from './contexts/AuthContext';
 import Button from '@restart/ui/esm/Button';
 
@@ -17,7 +18,8 @@ function App() {
           <div className="content">
             <Switch>
               <Route exact path='/' component={Home} />
-              <Route path="/blogs" component={BlogList}/>
+              <Route path="/entries" component={BlogList}/>
+              <Route path="/blogs/:id" component={BlogDetails}/>
               <Route path="/create" component={Create}/>
               <Route path="/login" component={Login}/>
               <Route path="/signup" component={Signup}/>
