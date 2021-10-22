@@ -11,8 +11,8 @@ const NavBar = () => {
   return ( 
     <Navbar collapseOnSelect expand="lg" className="navbar">
         <Navbar.Brand id="header">Know Myself</Navbar.Brand>
-        <Navbar.Toggle animation="false" aria-controls="responsive-navbar-nav" ref={nodeRef}/>
-        <Navbar.Collapse animation="false" id="responsive-navbar-nav">
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" ref={nodeRef}/>
+        <Navbar.Collapse id="responsive-navbar-nav">
           {!currentUser && 
             <>
               <div className="login" ref={nodeRef}>
