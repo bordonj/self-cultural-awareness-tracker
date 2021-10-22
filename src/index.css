@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css");
 
 /* base styles */
 /* every element with the "*" */
@@ -11,6 +12,7 @@ body {
   background-color: rgb(179, 179, 179);
 }
 .navbar {
+  color: #fff;
   padding: 20px 40px;
   display: flex;
   align-items: center; 
@@ -28,6 +30,9 @@ body {
 .navbar .login {
   margin-left: auto;
   /* shoots elements to the right bc parent displayed as flex */
+}
+.signin a {
+  color: pink;
 }
 .navbar a {
   margin-left: 16px;
