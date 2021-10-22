@@ -61,11 +61,13 @@ body {
   border-radius: 10px;
   background-color: rgb(233, 233, 233);
   color: white;
+  text-align: right;
 }
 .blog-preview:hover {
   box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
 }
 .blog-preview h2 {
+  text-align: left;
   font-size: 20px;
   color: #f0ad4e;
   margin-bottom: 8px;
@@ -185,3 +187,11 @@ a:hover {
     margin-top: 5px;
     margin-left: 5px;
   }
+
+  .spinner-parent {
+    text-align: center;
+  }
+  /* #spinner {
+    margin: auto;
+    width: 300px;
+  } */

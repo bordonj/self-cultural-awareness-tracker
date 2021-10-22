@@ -17,17 +17,19 @@ const BlogList = () => {
   return (
     <div className="blog-list">
       <h1>Blog Entries</h1>
-      { loading && 
-        <Spinner animation="border" role="status">
-          <span className="visually-hidden">Loading...</span>
-        </Spinner>
+      { loading &&
+        <div className="spinner-parent"> 
+          <Spinner animation="border" role="status" id="spinner">
+            <span className="visually-hidden">Loading...</span>
+          </Spinner>
+        </div>
       }
       {blogs.map(blog => {
         return (
           <div className="blog-preview" key={blog.id}>
             <Link to={`/blogs/${blog.id}`}>
-              <h2><strong>Title</strong>: { blog.incident }</h2>
               <p><strong>Date:</strong> { new Date(blog.date.seconds * 1000).toString() }</p>
+              <h2><strong>Title</strong>: { blog.incident }</h2>
             </Link>
           </div>
         )
