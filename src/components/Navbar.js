@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Navbar } from 'react-bootstrap';
 
 const NavBar = () => {
   const { currentUser, logout } = useAuth();
@@ -15,7 +15,7 @@ const NavBar = () => {
           {!currentUser && 
             <>
               <div className="login">
-                <Link to="/login" className="link">Login <i class="bi bi-door-open-fill"></i></Link>
+                <Link to="/login" className="link">Login <i className="bi bi-door-open-fill" style={{color: 'white'}}></i></Link>
                 <Link to="/signup" className="link">Sign Up</Link>
               </div>
             </>
@@ -29,8 +29,8 @@ const NavBar = () => {
                 <Link to="/lessons" className="link">Lessons</Link>
               </div>
               <div className="login">
-                <Link to="/login" onClick={logout} className="link">Logout <i class="bi bi-door-closed-fill"></i></Link>
-                <Link to="/profile" className="link">{currentUser.email} <i class="bi bi-person-circle"></i></Link>
+                <Link to="/login" onClick={logout} className="link">Logout <i className="bi bi-door-closed-fill" style={{color: 'white'}}></i></Link>
+                <Link to="/profile" className="link">{currentUser.email} <i className="bi bi-person-circle" style={{color: 'white'}}></i></Link>
               </div>
             </>
           }

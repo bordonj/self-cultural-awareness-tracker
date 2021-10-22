@@ -1,4 +1,4 @@
-import { useParams, useHistory } from "react-router";
+import { useParams } from "react-router";
 import useFetch from "../hooks/useFetch";
 import { useAuth } from "../contexts/AuthContext";
 import { Link } from "react-router-dom";

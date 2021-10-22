@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useAuth } from "../contexts/AuthContext";
 import { projectFirestore } from "../firebase/config";
 
 const useFirestore = (collection, uid) => {
@@ -20,7 +19,7 @@ const useFirestore = (collection, uid) => {
 
     return () => unsub();
 
-  }, [collection])
+  }, [collection, uid])
 
   return { docs, loading };
 }
