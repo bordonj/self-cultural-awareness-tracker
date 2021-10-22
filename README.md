@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# self-cultural-awareness-tracker
+Capstone
+```
+Overall Review
+Name of Student: Jennifer Bordon
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Name of Project: Self-/Cultural-Awareness Tracker
 
-## Available Scripts
+Project's Purpose or Goal: Help Users understand themselves, their biases, their triggers better. Hopefully to become more understanding/empathic people.
 
-In the project directory, you can run:
+List the absolute minimum features the project requires to meet this purpose or goal:
 
-### `yarn start`
+- Profile showing one's demographics
+- Journal log of their thoughts to some controversial topics, e.g., race, gender, etc.
+- Access lessons to DEI topics e.g., microaggression, stereotype threat
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+What tools, frameworks, libraries, APIs, modules and/or other resources (whatever is specific to your track, and your language) will you use to create this MVP? List them all here. Be specific.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- JavaScript
+- React
+- NoSQL
 
-### `yarn test`
+If you finish developing the minimum viable product (MVP) with time to spare, what will you work on next? Describe these features here: Be specific.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Quizzes to take on lessons/concepts 
+- Option to share results with others if wanted
+- Make this mobile
 
-### `yarn build`
+What additional tools, frameworks, libraries, APIs, or other resources will these additional features require?
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- unsure at the moment
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Is there anything else you'd like your instructor to know?
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- N/A
+```
 
-### `yarn eject`
+## Research & Planning Log
+### Friday 09/17/21
+8:00: plan out to-dos
+- trello board
+  - https://trello.com/b/JVqFOsnc/planner
+- retrieve old lessons on ECPY360 - cultural diversity and social justice
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+8:10 - 10: research Firebase for hosting
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+10 - 12: read more into Firebase and NoSQL
+- download all my old slides/readings from ECPY360 course
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+12: lunch!
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1 - 3: review Epicodus lessons relevant to capstone
+- e.g., React, React with Redux, JS intermediate
 
-## Learn More
+4 - 5: continue Epicodus lessons review 
+- React with Redux review
+- Setting up Firebase Project
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Friday 09/24/21
+8:10 - 10: start the `create-react-app` 
+- add Firebase and Firestore database
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+10 - 12: work more with adding Firebase/Firestore
+- also add more with components
 
-### Code Splitting
+12: lunch!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1 - 3: work on user interface
+- work on CRUD for journals
+- was trying work on UI but got stuck trying to debug how to update to the latest firebase
+  - WIP on firebase version update!
 
-### Analyzing the Bundle Size
+3 - 5: troubleshoot how to use the latest firebase/firestore to add to collection
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Friday 09/24/21
+8 - 12: research more React - make sure I understand how to implement
+- components
+  - class, hooks, redux
