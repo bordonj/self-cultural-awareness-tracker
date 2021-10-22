@@ -1,11 +1,14 @@
+import { useState } from "react";
 import { useParams } from "react-router";
 import useFetch from "../hooks/useFetch";
 import { useAuth } from "../contexts/AuthContext";
 import { Link } from "react-router-dom";
 import { Card, Spinner } from "react-bootstrap";
+import Edit from "./Edit";
 
 
 const BlogDetails = () => {
+  const [editForm, setEditForm] = useState(false);
   const { id } = useParams(); 
   const { currentUser } = useAuth();
   const { uid } = currentUser;
@@ -13,6 +16,11 @@ const BlogDetails = () => {
   console.log('doc', doc)
   console.log('loading blog', loading)
 
+  if (editForm) {
+    return (
+      <Edit blog={doc}/>
+    )
+  }
   return (
     <>
       { loading && 
@@ -36,6 +44,7 @@ const BlogDetails = () => {
             <Link to="/entries">
               <button className="ui button grey">back to journals</button>
             </Link>
+            <button onClick={() => setEditForm(true)}>Edit Entry</button>
           </div>
         </Card>
       }  
