@@ -17,7 +17,7 @@ const BlogList = () => {
   return (
     <div className="blog-list">
       <h1>Blog Entries</h1>
-      { blogs.length === 0 && <h3>None created yet... get started with a <Link to="/create">new blog!</Link></h3>}
+      { blogs.length === 0 && !loading && <h3>None created yet... get started with a <Link to="/create">new blog!</Link></h3>}
       { loading &&
         <div className="spinner-parent"> 
           <Spinner animation="border" role="status" id="spinner">
