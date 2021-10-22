@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { projectFirestore } from "../firebase/config";
+import { useHistory } from "react-router";
 import { useParams } from "react-router";
 import useFetch from "../hooks/useFetch";
 import { useAuth } from "../contexts/AuthContext";
@@ -13,8 +15,18 @@ const BlogDetails = () => {
   const { currentUser } = useAuth();
   const { uid } = currentUser;
   const { doc, loading } = useFetch('users', uid, id);
+  const history = useHistory();
   console.log('doc', doc)
   console.log('loading blog', loading)
+
+  const handleDelete = async e => {
+    e.preventDefault();
+
+    await projectFirestore.collection('users').doc(uid).collection('journalEntries').doc(id).delete();
+
+    history.push('/entries');
+  }
+
 
   if (editForm) {
     return (
@@ -45,6 +57,7 @@ const BlogDetails = () => {
               <button className="ui button grey">back to journals</button>
             </Link>
             <button onClick={() => setEditForm(true)}>Edit Entry</button>
+            <button onClick={handleDelete}>Delete Entry</button>
           </div>
         </Card>
       }  
