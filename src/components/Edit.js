@@ -32,58 +32,61 @@ const Edit = ({ blog }) => {
   }
 
   return (
-    <div className="create">
-      <h2>Update Blog</h2>
-      <form onSubmit={handleSubmit}>
-        <label>Blog Title:</label>
-        <input 
-          type="text" 
-          placeholder="Was I in the wrong?"
-          required
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <label>Feeling:</label>
-        <input 
-          placeholder="Defensive but remorseful"
-          value={feeling}
-          onChange={e => setFeeling(e.target.value)}
-          required
-        />
-        <label>Incident:</label>
-        <input
-          placeholder="Being told that I was out of place with my joke"
-          value={incident}
-          onChange={e => setIncident(e.target.value)}
-        />
-        <label>Reaction:</label>
-        <input
-          placeholder="Initially said the other party was too sensitive"
-          value={reaction}
-          onChange={e => setReaction(e.target.value)}
-        />
-        <label>Other perspective:</label>
-        <input
-          placeholder="Maybe they had their reasons to find it offensive"
-          value={otherside}
-          onChange={e => setOtherside(e.target.value)}
-        />
-        <label>Reflection:</label>
-        <textarea
-          placeholder="I've thought more about how I could be insensitive because I've not as aware and ignorant of others feelings"
-          value={reflection}
-          onChange={e => setReflection(e.target.value)}
-        />
-        <label>Lessons learned:</label>
-        <input
-          placeholder="I could be less dismissive"
-          value={lessonslearned}
-          onChange={e => setLessonslearned(e.target.value)}
-        />
-        { !loading && <button>Edit Blog</button>}
-        { loading && <button disabled>Adding blog..</button>}
-      </form>
-    </div>
+    <>
+      <button id="back" onClick={() => history.push('/entries')}>back to entries</button>
+      <div className="create">
+        <h2>Update Blog</h2>
+        <form onSubmit={handleSubmit}>
+          <label>Blog Title:</label>
+          <input 
+            type="text" 
+            placeholder="Was I in the wrong?"
+            required
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+          <label>Feeling:</label>
+          <input 
+            placeholder="Defensive but remorseful"
+            value={feeling}
+            onChange={e => setFeeling(e.target.value)}
+            required
+          />
+          <label>Incident:</label>
+          <input
+            placeholder="Being told that I was out of place with my joke"
+            value={incident}
+            onChange={e => setIncident(e.target.value)}
+          />
+          <label>Reaction:</label>
+          <input
+            placeholder="Initially said the other party was too sensitive"
+            value={reaction}
+            onChange={e => setReaction(e.target.value)}
+          />
+          <label>Other perspective:</label>
+          <input
+            placeholder="Maybe they had their reasons to find it offensive"
+            value={otherside}
+            onChange={e => setOtherside(e.target.value)}
+          />
+          <label>Reflection:</label>
+          <textarea
+            placeholder="I've thought more about how I could be insensitive because I've not as aware and ignorant of others feelings"
+            value={reflection}
+            onChange={e => setReflection(e.target.value)}
+          />
+          <label>Lessons learned:</label>
+          <input
+            placeholder="I could be less dismissive"
+            value={lessonslearned}
+            onChange={e => setLessonslearned(e.target.value)}
+          />
+          { !loading && <button>Edit Blog</button>}
+          { loading && <button disabled>Adding blog..</button>}
+        </form>
+      </div>
+    </>
   )
 }
 
