@@ -1,79 +1,49 @@
-# self-cultural-awareness-tracker
-Capstone
-```
-Overall Review
-Name of Student: Jennifer Bordon
+## "Know Myself" - a self and cultural awareness tracker
+#### _by Jennifer Bordon_
 
-Name of Project: Self-/Cultural-Awareness Tracker
+## Description
+This is an application used for the goal of helping users understand themselves, their biases, their triggers, and more better. Hopefully to become more understanding/empathic people. 
 
-Project's Purpose or Goal: Help Users understand themselves, their biases, their triggers better. Hopefully to become more understanding/empathic people.
+Ultimately, someone could hope to become more self-reflective and aware of the choices they make and the consequences they will have. 
 
-List the absolute minimum features the project requires to meet this purpose or goal:
-
-- Profile showing one's demographics
-- Journal log of their thoughts to some controversial topics, e.g., race, gender, etc.
-- Access lessons to DEI topics e.g., microaggression, stereotype threat
-
-What tools, frameworks, libraries, APIs, modules and/or other resources (whatever is specific to your track, and your language) will you use to create this MVP? List them all here. Be specific.
-
+User stories:
+- access to CRUD functionality for blogs
+- profile for demographics, or other intersectional identities
+- lessons that provide information about multicultural topics
+### Technologies used
 - JavaScript
-- React
-- NoSQL
+- React JS:
+  - React Hooks, functional components
+- CSS
+- Boostrap/react-bootstrap
+- React Router
+- NPM/webpack/ESLint
+- Firebase (BaaS):
+  - Firestore Database
+  - Authentication
+  - Firestore Storage
 
-If you finish developing the minimum viable product (MVP) with time to spare, what will you work on next? Describe these features here: Be specific.
+## Setup/Installation Requirements
+### Project Setup
+1. Clone the repo in a location you can easily find
+2. Open the repo in Visual Studio Code
+3. run `npm i` to install the dependencies in the terminal 
+### Database
+1. Use your google account to access the Firebase at `https://firebase.google.com/`
+2. Press `+ Add project` to create a new project 
+3. Create a new `Web App` by click the `</>` button
+4. Should have access to the Firebase configuration, and store that informatiion in a `.env.local` file in your cloned repo 
+### Authentication
+1. On the `Build` tab for the Firebase dashboard, press `Authentication`
+2. Make sure you `get started` on this enable Authentication
+3. Allow `Email/Password` as a sign-in method
+### Run Application
+1. After completing the above steps, run `npm start` in the terminal for the cloned repo
+2. Open your browser to `http://localhost:3000/`
 
-- Quizzes to take on lessons/concepts 
-- Option to share results with others if wanted
-- Make this mobile
+## Bugs
+None known at the moment. Please contact me for any discovered bugs.
+## License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-What additional tools, frameworks, libraries, APIs, or other resources will these additional features require?
-
-- unsure at the moment
-
-Is there anything else you'd like your instructor to know?
-
-- N/A
-```
-
-## Research & Planning Log
-### Friday 09/17/21
-8:00: plan out to-dos
-- trello board
-  - https://trello.com/b/JVqFOsnc/planner
-- retrieve old lessons on ECPY360 - cultural diversity and social justice
-
-8:10 - 10: research Firebase for hosting
-
-10 - 12: read more into Firebase and NoSQL
-- download all my old slides/readings from ECPY360 course
-
-12: lunch!
-
-1 - 3: review Epicodus lessons relevant to capstone
-- e.g., React, React with Redux, JS intermediate
-
-4 - 5: continue Epicodus lessons review 
-- React with Redux review
-- Setting up Firebase Project
-
-### Friday 09/24/21
-8:10 - 10: start the `create-react-app` 
-- add Firebase and Firestore database
-
-10 - 12: work more with adding Firebase/Firestore
-- also add more with components
-
-12: lunch!
-
-1 - 3: work on user interface
-- work on CRUD for journals
-- was trying work on UI but got stuck trying to debug how to update to the latest firebase
-  - WIP on firebase version update!
-
-3 - 5: troubleshoot how to use the latest firebase/firestore to add to collection
-
-
-### Friday 09/24/21
-8 - 12: research more React - make sure I understand how to implement
-- components
-  - class, hooks, redux
+_Copyright (c) 2021 Jennifer Bordon_
