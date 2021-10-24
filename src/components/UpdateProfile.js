@@ -89,11 +89,14 @@ const UpdateProfile = ({ setEditProfile, profile }) => {
           <Form onSubmit={handleSubmit}>
             <img src={profilePic} style={{width: '200px'}}/>
             <Form.Group id="pic">
-              <label>
+              <label className="custom-file-upload">
                 <input type="file" onChange={picChangeHandler}/>
+                Upload Photo
                 <label>{picErr}</label>
+                <label>{ picFile && <div>{picFile.name}</div>}</label>
               </label>
               { picFile && <PicProgressBar picFile={picFile} setPicFile={setPicFile} setProfilePic={setProfilePic}/>}
+              
               <Button onClick={() => setProfilePic('https://firebasestorage.googleapis.com/v0/b/know-myself-76d29.appspot.com/o/anon.jpg?alt=media&token=da271531-5d56-41cf-8719-fce913be9803')}>Delete Photo</Button>
             </Form.Group>
             <Form.Group id="email">
