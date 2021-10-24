@@ -6,9 +6,10 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import BlogList from './components/BlogList';
 import BlogDetails from './components/BlogDetails';
+import Profile from './components/Profile';
 import { AuthProvider } from './contexts/AuthContext';
 
-function App() {
+const App = () => {
   return (
     <Router>
       <AuthProvider>
@@ -20,6 +21,7 @@ function App() {
               <Route path="/entries" component={BlogList}/>
               <Route path="/blogs/:id" component={BlogDetails}/>
               <Route path="/create" component={Create}/>
+              <Route path="/profile" component={Profile}/>
               <Route path="/login" component={Login}/>
               <Route path="/signup" component={Signup}/>
             </Switch>
