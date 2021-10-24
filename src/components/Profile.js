@@ -5,13 +5,14 @@ import { useAuth } from "../contexts/AuthContext";
 import { Link, useHistory } from "react-router-dom";
 import useFetchProfile from "../hooks/useFetchProfile";
 import UpdateProfile from "./UpdateProfile";
+import { projectFirestore } from './../firebase/config'
 
 const Profile = () => {
   const { currentUser } = useAuth();
-  const { uid } = currentUser;
+  const { uid, email } = currentUser;
   const { doc, pending } = useFetchProfile('users', uid);
   const [editProfile, setEditProfile] = useState(false);
-  const history = useHistory();
+  const [profile, setProfile] = useState(null);
   const us = 'Unspecified';
   console.log('doc', doc)
 
@@ -65,12 +66,12 @@ const Profile = () => {
       </Card>
       )
     } else {
-      return (
-        <>
-        <h1>No Profile yet</h1>
-        <Button onClick={() => setEditProfile(true)}>Update Profile</Button>
-        </>
-      )
+      const profile = { email };
+      const makeProfile = async () => {
+        await projectFirestore?.collection('users').doc(uid).set(profile);
+        setProfile(profile);
+      }
+      makeProfile();
     }
   }
 
