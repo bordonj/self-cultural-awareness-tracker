@@ -9,13 +9,14 @@ Ultimately, someone could hope to become more self-reflective and aware of the c
 User stories:
 - access to CRUD functionality for blogs
 - profile for demographics, or other intersectional identities
+  - can upload a profile photo
 - lessons that provide information about multicultural topics
 ### Technologies used
 - JavaScript
 - React JS:
   - React Hooks, functional components
 - CSS
-- Boostrap/react-bootstrap
+- Bootstrap/react-bootstrap
 - React Router
 - NPM/webpack/ESLint
 - Firebase (BaaS):
