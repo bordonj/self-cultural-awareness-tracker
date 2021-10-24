@@ -5,7 +5,6 @@ import { Navbar } from 'react-bootstrap';
 
 const NavBar = () => {
   const { currentUser, logout } = useAuth();
-  console.log(currentUser);
 
   return ( 
     <Navbar collapseOnSelect expand="lg" className="navbar">

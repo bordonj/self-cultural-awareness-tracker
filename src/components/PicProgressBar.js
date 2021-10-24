@@ -3,9 +3,7 @@ import useStorage from "../hooks/useStorage";
 import { motion } from "framer-motion";
 
 const PicProgressBar = ({ picFile, setPicFile, setProfilePic}) => {
-  console.log('picFile', picFile)
   const { profilePic, progress } = useStorage(picFile);
-  console.log(progress, profilePic);
 
   useEffect(() => {
     if (profilePic) {

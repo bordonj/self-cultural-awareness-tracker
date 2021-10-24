@@ -16,8 +16,6 @@ const BlogDetails = () => {
   const { uid } = currentUser;
   const { doc, loading } = useFetch('users', uid, id);
   const history = useHistory();
-  console.log('doc', doc)
-  console.log('loading blog', loading)
 
   const handleDelete = async e => {
     e.preventDefault();

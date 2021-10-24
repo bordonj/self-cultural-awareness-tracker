@@ -22,7 +22,6 @@ const Login = () => {
       setLoading(false);
       history.push('/');
     } catch (err) {
-      console.log(err)
       setError('Failed to sign in');
       setLoading(false);
     }

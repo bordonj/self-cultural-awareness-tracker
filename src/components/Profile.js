@@ -14,7 +14,6 @@ const Profile = () => {
   const [editProfile, setEditProfile] = useState(false);
   const [profile, setProfile] = useState(null);
   const us = 'Unspecified';
-  console.log('doc', doc)
 
   const showProfile = () => {
     if (doc) {
@@ -75,7 +74,6 @@ const Profile = () => {
     }
   }
 
-  // console.log('profile', doc, doc.age, doc.name, pending, uid)
   if (editProfile) {
     return (
       <UpdateProfile profile={doc} setEditProfile={setEditProfile} />

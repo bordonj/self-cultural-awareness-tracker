@@ -10,15 +10,12 @@ const useFetch = (collection, uid, id) => {
 
     docRef.get().then(doc => {
       if (doc.exists) {
-        console.log('doc data', doc.data());
         setLoading(false);
         setDoc(doc.data());
       } else {
-        console.log('no such doc');
         setLoading(false);
       }
     }).catch(err => {
-      console.log('err getting doc', err);
       setLoading(false);
     });
 

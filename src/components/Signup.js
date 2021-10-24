@@ -27,7 +27,6 @@ const Signup = () => {
       setLoading(false);
       history.push('/profile');
     } catch (error) {
-      console.log(error)
       setError('Failed to create an account');
       setLoading(false);
     }

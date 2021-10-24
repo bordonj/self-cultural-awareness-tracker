@@ -5,7 +5,6 @@ import { useAuth } from '../contexts/AuthContext';
 import { projectFirestore } from '../firebase/config';
 
 const Edit = ({ blog }) => {
-  console.log('blog', blog)
   const [title, setTitle] = useState(blog.title);
   const [incident, setIncident] = useState(blog.incident)
   const [feeling, setFeeling] = useState(blog.feeling);

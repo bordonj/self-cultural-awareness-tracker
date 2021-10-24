@@ -9,8 +9,6 @@ const BlogList = () => {
   const { uid } = currentUser;
 
   const { docs: blogs, loading } = useFirestore('users', uid);
-  console.log(blogs);
-  console.log('loading', loading);
 
 
 

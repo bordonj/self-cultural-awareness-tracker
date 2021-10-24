@@ -7,7 +7,6 @@ import { projectFirestore } from "../firebase/config";
 import PicProgressBar from "./PicProgressBar";
 
 const UpdateProfile = ({ setEditProfile, profile }) => {
-  // console.log('profile update', profile)
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
@@ -96,7 +95,7 @@ const UpdateProfile = ({ setEditProfile, profile }) => {
                 <label>{ picFile && <div>{picFile.name}</div>}</label>
               </label>
               { picFile && <PicProgressBar picFile={picFile} setPicFile={setPicFile} setProfilePic={setProfilePic}/>}
-              
+
               <Button onClick={() => setProfilePic('https://firebasestorage.googleapis.com/v0/b/know-myself-76d29.appspot.com/o/anon.jpg?alt=media&token=da271531-5d56-41cf-8719-fce913be9803')}>Delete Photo</Button>
             </Form.Group>
             <Form.Group id="email">

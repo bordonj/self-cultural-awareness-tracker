@@ -12,15 +12,12 @@ const useFetchProfile = (collection, uid) => {
     })
     docRef.get().then(doc => {
       if (doc.exists) {
-        console.log('doc data', doc.data());
         setPending(false);
         setDoc(doc.data());
       } else {
-        console.log('no such doc');
         setPending(false);
       }
     }).catch(err => {
-      console.log('err getting doc', err);
       setPending(false);
     });
 
