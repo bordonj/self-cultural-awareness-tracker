@@ -25,7 +25,7 @@ const Signup = () => {
       setError('')
       await signup(emailRef.current.value, passwordRef.current.value); // this is async!
       setLoading(false);
-      history.push('/');
+      history.push('/profile');
     } catch (error) {
       console.log(error)
       setError('Failed to create an account');
