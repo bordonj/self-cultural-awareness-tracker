@@ -94,6 +94,7 @@ const UpdateProfile = ({ setEditProfile, profile }) => {
                 <label>{picErr}</label>
               </label>
               { picFile && <PicProgressBar picFile={picFile} setPicFile={setPicFile} setProfilePic={setProfilePic}/>}
+              <Button onClick={() => setProfilePic('https://firebasestorage.googleapis.com/v0/b/know-myself-76d29.appspot.com/o/anon.jpg?alt=media&token=da271531-5d56-41cf-8719-fce913be9803')}>Delete Photo</Button>
             </Form.Group>
             <Form.Group id="email">
               <Form.Label>Email</Form.Label>
