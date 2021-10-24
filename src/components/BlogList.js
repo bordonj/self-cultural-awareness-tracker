@@ -21,7 +21,7 @@ const BlogList = () => {
       { loading &&
         <div className="spinner-parent"> 
           <Spinner animation="border" role="status" id="spinner">
-            <span className="visually-hidden">Loading...</span>
+            <span className="visually-hidden"></span>
           </Spinner>
         </div>
       }

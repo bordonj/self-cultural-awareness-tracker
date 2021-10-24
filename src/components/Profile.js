@@ -24,11 +24,11 @@ const Profile = () => {
       { pending &&
         <div className="spinner-parent"> 
           <Spinner animation="border" role="status" id="spinner">
-            <span className="visually-hidden">Loading...</span>
+            <span className="visually-hidden"></span>
           </Spinner>
         </div>
       }
-      <img src={doc.profilePic} alt="personal photo" style={{width: '300px'}}/>
+      <img src={doc.profilePic ? doc.profilePic : 'https://firebasestorage.googleapis.com/v0/b/know-myself-76d29.appspot.com/o/anon.jpg?alt=media&token=da271531-5d56-41cf-8719-fce913be9803'} alt="personal photo" style={{width: '300px'}}/>
       <h2>Age: {doc.age}</h2>
       <h2>Name: {doc.name}</h2>
       <button onClick={() => setEditProfile(true)}>Update Profile</button>
