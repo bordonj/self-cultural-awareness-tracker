@@ -7,7 +7,7 @@ import { projectFirestore } from "../firebase/config";
 import PicProgressBar from "./PicProgressBar";
 
 const UpdateProfile = ({ setEditProfile, profile }) => {
-  console.log('profile update', profile)
+  // console.log('profile update', profile)
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
@@ -18,22 +18,22 @@ const UpdateProfile = ({ setEditProfile, profile }) => {
   const history = useHistory();
 
   // hooks for demographics
-  const [profilePic, setProfilePic] = useState(profile.profilePic ? profile.profilePic : 'https://firebasestorage.googleapis.com/v0/b/know-myself-76d29.appspot.com/o/anon.jpg?alt=media&token=da271531-5d56-41cf-8719-fce913be9803');
+  const [profilePic, setProfilePic] = useState(profile?.profilePic ? profile.profilePic : 'https://firebasestorage.googleapis.com/v0/b/know-myself-76d29.appspot.com/o/anon.jpg?alt=media&token=da271531-5d56-41cf-8719-fce913be9803');
   const [picErr, setPicErr] = useState('');
   const [picFile, setPicFile] = useState(null); 
   // end photo
-  const [age, setAge] = useState(profile.age ? profile.age : '');
-  const [name, setName] = useState(profile.name ? profile.name : '');
-  const [race, setRace] = useState(profile.race ? profile.race : '');
-  const [ethnicity, setEthnicity] = useState(profile.ethnicity ? profile.ethnicity : '');
-  const [gender, setGender] = useState(profile.gender ? profile.gender : '');
-  const [sexuality, setSexuality] = useState(profile.sexuality ? profile.sexuality : '');
-  const [ability, setAbility] = useState(profile.ability ? profile.ability : '');
-  const [language, setLanguage] = useState(profile.language ? profile.language : '');
-  const [occupation, setOccupation] = useState(profile.occupation ? profile.occupation : '');
-  const [religion, setReligion] = useState(profile.religion ? profile.religion : '');
-  const [nationality, setNationality] = useState(profile.nationality ? profile.nationality : '');
-  const [immstatus, setImmstatus] = useState(profile.immstatus ? profile.immstatus : '');
+  const [age, setAge] = useState(profile?.age ? profile.age : '');
+  const [name, setName] = useState(profile?.name ? profile.name : '');
+  const [race, setRace] = useState(profile?.race ? profile.race : '');
+  const [ethnicity, setEthnicity] = useState(profile?.ethnicity ? profile.ethnicity : '');
+  const [gender, setGender] = useState(profile?.gender ? profile.gender : '');
+  const [sexuality, setSexuality] = useState(profile?.sexuality ? profile.sexuality : '');
+  const [ability, setAbility] = useState(profile?.ability ? profile.ability : '');
+  const [language, setLanguage] = useState(profile?.language ? profile.language : '');
+  const [occupation, setOccupation] = useState(profile?.occupation ? profile.occupation : '');
+  const [religion, setReligion] = useState(profile?.religion ? profile.religion : '');
+  const [nationality, setNationality] = useState(profile?.nationality ? profile.nationality : '');
+  const [immstatus, setImmstatus] = useState(profile?.immstatus ? profile.immstatus : '');
   
 
   const picChangeHandler = e => {
