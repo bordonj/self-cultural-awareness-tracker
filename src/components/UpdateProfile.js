@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Card, Form, Button, Alert } from "react-bootstrap";
 import { useRef } from "react";
 import { useAuth } from "../contexts/AuthContext";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { projectFirestore } from "../firebase/config";
 import PicProgressBar from "./PicProgressBar";
 
@@ -86,7 +86,7 @@ const UpdateProfile = ({ setEditProfile, profile }) => {
           <h2 className="text-center mb-4">Update Profile</h2>
           {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={handleSubmit}>
-            <img src={profilePic} style={{width: '200px'}}/>
+            <img src={profilePic} style={{width: '200px'}} alt="current icon"/>
             <Form.Group id="pic">
               <label className="custom-file-upload">
                 <input type="file" onChange={picChangeHandler}/>

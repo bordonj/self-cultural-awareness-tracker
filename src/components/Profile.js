@@ -1,8 +1,6 @@
 import { useState } from "react";
-import { Card, Form, Button, Alert, Spinner } from "react-bootstrap";
-import { useRef } from "react";
+import { Card, Button, Spinner } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";
-import { Link, useHistory } from "react-router-dom";
 import useFetchProfile from "../hooks/useFetchProfile";
 import UpdateProfile from "./UpdateProfile";
 import { projectFirestore } from './../firebase/config'
@@ -20,7 +18,7 @@ const Profile = () => {
       return (
         <Card>
         <Card.Header as="h5">Profile Info</Card.Header>
-        <img src={doc.profilePic ? doc.profilePic : 'https://firebasestorage.googleapis.com/v0/b/know-myself-76d29.appspot.com/o/anon.jpg?alt=media&token=da271531-5d56-41cf-8719-fce913be9803'} alt="personal photo" style={{width: '300px', margin: '10px auto', border: '1px solid #ddd', borderRadius: '8px'}}/>
+        <img src={doc.profilePic ? doc.profilePic : 'https://firebasestorage.googleapis.com/v0/b/know-myself-76d29.appspot.com/o/anon.jpg?alt=media&token=da271531-5d56-41cf-8719-fce913be9803'} alt="personal" style={{width: '300px', margin: '10px auto', border: '1px solid #ddd', borderRadius: '8px'}}/>
         <Card.Body>
           <Card.Title><h3>Intersectional Identities</h3></Card.Title>
           <hr />
