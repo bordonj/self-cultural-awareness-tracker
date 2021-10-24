@@ -7,7 +7,9 @@ const useFetchProfile = (collection, uid) => {
 
   useEffect(() => {
     const docRef = projectFirestore.collection(collection).doc(uid);
-
+    docRef.onSnapshot(doc => {
+      setDoc(doc.data());
+    })
     docRef.get().then(doc => {
       if (doc.exists) {
         console.log('doc data', doc.data());
