@@ -21,11 +21,11 @@ const Edit = ({ blog }) => {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    const blog = { title, incident, feeling, reaction, otherside, reflection, lessonslearned, date: new Date()}
+    const newBlog = { title, incident, feeling, reaction, otherside, reflection, lessonslearned, date: blog.date}
 
     setLoading(true);
 
-    await projectFirestore.collection('users').doc(uid).collection('journalEntries').doc(id).set(blog);
+    await projectFirestore.collection('users').doc(uid).collection('journalEntries').doc(id).set(newBlog);
 
     setLoading(false);
     history.push('/entries');
