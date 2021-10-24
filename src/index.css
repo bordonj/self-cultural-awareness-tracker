@@ -11,6 +11,9 @@
 body {
   background-color: rgb(179, 179, 179);
 }
+b {
+  color: #faa361;
+}
 .navbar {
   color: #fff;
   padding: 20px 40px;
@@ -220,4 +223,19 @@ a:hover {
   height: 5px;
   background: var(--primary);
   margin-top: 20px;
+}
+input[type="file"] {
+  display: none;
+}
+.custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: #ffae00;
+  color: white;
+  cursor: pointer;
+  transition-duration: .3s;
+}
+.custom-file-upload:hover {
+  background-color: #ff951b;
 }

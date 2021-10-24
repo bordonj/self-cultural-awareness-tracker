@@ -48,14 +48,13 @@ const BlogDetails = () => {
       { !loading &&
         <Card>
           <div className="blog-details">
-            <h1>Title: {doc.title}</h1>
-            <p>incident: {doc.incident}</p>
-            <p>feeling: {doc.feeling}</p>
-            <p>reaction: {doc.reaction}</p>
-            <p>other side: {doc.otherside}</p>
-            <p>Title: {doc.title}</p>
-            <p>reflection: {doc.reflection}</p>
-            <p>lessons learned: {doc.lessonslearned}</p>
+            <h1><b>Title:</b> {doc.title}</h1>
+            <p><b>Incident:</b> {doc.incident}</p>
+            <p><b>Feeling:</b> {doc.feeling}</p>
+            <p><b>Reaction:</b> {doc.reaction}</p>
+            <p><b>Other side:</b> {doc.otherside}</p>
+            <p><b>Reflection:</b> {doc.reflection}</p>
+            <p><b>Lessons learned:</b> {doc.lessonslearned}</p>
             <div className="details-links">
               <Link to="/entries">
                 <button className="d-link">Back to Entries</button>
