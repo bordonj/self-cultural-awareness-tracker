@@ -214,3 +214,10 @@ a:hover {
     margin: auto;
     width: 300px;
   } */
+
+  /* progress bar styles */
+.progress-bar{
+  height: 5px;
+  background: var(--primary);
+  margin-top: 20px;
+}
