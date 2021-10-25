@@ -7,9 +7,13 @@ import Signup from './components/Signup';
 import BlogList from './components/BlogList';
 import BlogDetails from './components/BlogDetails';
 import Profile from './components/Profile';
+import Lessons from './components/Lessons';
+import Modal from './components/Modal'
 import { AuthProvider } from './contexts/AuthContext';
+import { useState } from 'react';
 
 const App = () => {
+
   return (
     <Router>
       <AuthProvider>
@@ -21,6 +25,9 @@ const App = () => {
               <Route path="/entries" component={BlogList}/>
               <Route path="/blogs/:id" component={BlogDetails}/>
               <Route path="/create" component={Create}/>
+              <Route path="/lessons"> 
+                <Lessons />
+              </Route>
               <Route path="/profile" component={Profile}/>
               <Route path="/login" component={Login}/>
               <Route path="/signup" component={Signup}/>
