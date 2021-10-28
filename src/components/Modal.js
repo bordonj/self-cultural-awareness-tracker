@@ -18,16 +18,17 @@ const Modal = ({ selectedLesson, setSelectedLesson }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
-      <motion.div alt="enlarged pic" initial={{ y: "-100vh" }} animate={{ y: 0 }}/>
-      { entries && entries.map(entry => (
-        <React.Fragment key={entry}>
-          <div>
-            <h4>{entry[0]}</h4>
-            <p>{entry[1]}</p>
-          </div>
-        </React.Fragment>
-      ))}
-      {/* <Button onClick={() => setSelectedLesson(null)}>Back</Button> */}
+      <motion.div alt="enlarged pic" initial={{ y: "-100vh" }} animate={{ y: 0 }}>
+        { entries && entries.map(entry => (
+          <React.Fragment key={entry}>
+            <div key={entry}>
+              <h4>{entry[0]}</h4>
+              <p>{entry[1]}</p>
+            </div>
+          </React.Fragment>
+        ))}
+        {/* <Button onClick={() => setSelectedLesson(null)}>Back</Button> */}
+      </motion.div>
     </motion.div>
   )
 }

@@ -3,8 +3,11 @@ import useFetchLessons from '../hooks/useFetchLessons'
 import { motion } from 'framer-motion'
 import Modal from './Modal'
 import { Spinner } from 'react-bootstrap'
+import FlashcardList from './FlashcardList'
+import './lessons.css'
 
 const Lessons = () => {
+  // const [flashcards, setFlashcards] = useState(SAMPLE_FLASHCARDS);
   const  { docs, loading } = useFetchLessons('lessons');
   const [selectedLesson, setSelectedLesson] = useState(null);
   console.log('selectedLesson', selectedLesson);
@@ -12,7 +15,8 @@ const Lessons = () => {
   console.log('setSelectedLesson', setSelectedLesson);
   if (selectedLesson) {
     return (
-      <Modal selectedLesson={selectedLesson} setSelectedLesson={setSelectedLesson}/>
+      <FlashcardList selectedLesson={selectedLesson} setSelectedLesson={setSelectedLesson}/>
+
     )
   }
   return (
@@ -32,9 +36,9 @@ const Lessons = () => {
             onClick={() => setSelectedLesson(docs[idx])}
           >
             <motion.div className="grid-item"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1 }}
+              // initial={{ opacity: 0 }}
+              // animate={{ opacity: 1 }}
+              // transition={{ delay: 1 }}
             >
               <h1>{doc.id}</h1>
             </motion.div>
@@ -42,8 +46,28 @@ const Lessons = () => {
         ))}
       </div>
     </>
+  
+  // return (
+  //   <>
+  //     <FlashcardList flashcards={flashcards} />
+  //   </>
     )
   
 }
+
+const SAMPLE_FLASHCARDS = [
+  {
+    id: 1,
+    term: 'multiculturalism',
+    definition: 'allowing other cultures to distinctly live with others harmoniously',
+    options: [3, 2, 1]
+  },
+  {
+    id: 2,
+    term: 'racism',
+    definition: 'power and privilege benefiting one group unfairly and discriminating against others systemically',
+    options: [1, 2, 3]
+  }
+]
 
 export default Lessons
