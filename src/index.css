@@ -245,14 +245,16 @@ input[type="file"] {
 .card-grid {
   margin: 10px auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  /* grid-template-columns: repeat(3, 250px); */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap: 20px;
 }
 .grid{
   margin: 5px auto;
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 10px;
+  grid-gap: 10px;  
 }
 .grid-wrap{
   overflow: hidden;

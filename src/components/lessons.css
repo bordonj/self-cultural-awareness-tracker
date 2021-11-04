@@ -37,8 +37,9 @@
 	top: 0;
 	left: 0;
 	backface-visibility: hidden;
-	overflow: hidden;
+	overflow: scroll;
 	transition: transform .8s ease;
+  text-align: center;
 }
 .back {
 	transform: rotateY(180deg);
@@ -64,7 +65,7 @@
   --rotate-y: 180deg;
 } */
 .flashcard .front {
-  left: 0;
+  text-align: center;
 }
 
 .flashcard .front,
@@ -72,6 +73,7 @@
   position: absolute;
   padding: 1rem;
   backface-visibility: hidden;
+  text-align: center;
 }
 
 /* .flashcard .back {
@@ -92,28 +94,42 @@
   margin-top: 0;
 }
 
-.flexbox-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  flex: 1 1 32%;
-  justify-content: space-between;
-}
+
+/* .flexbox-container::after {
+  content: "";
+  flex: auto;
+} */
 
 .intro {
   order: -1;
   /* align-self: flex-start; */
   flex-basis: 100%;
+  grid-column-start: 1; 
+  grid-column-end: 5;
 }
 
 .flex-item {
   flex-basis: 25%;
+  text-align: center;
 }
 
-@media all and (max-width: 991px) {
+@media all and (max-width: 1125px) {
   /* CSS rules here for screens lower than 750px */
+  .flexbox-container {
+    display: flex;
+    flex-flow: row wrap;
+    flex: 1 1 32%;
+    justify-content: space-between;
+    column-gap: 2rem;
+  }
     .flex-item {
       flex-basis: 100%;
       height: 200px;
     }
+    /* .card-grid { */
+      /* grid-template-columns: repeat(1, 100%); */
+      /* grid-template-columns: max-content; */
+      /* grid-template-columns: 1fr; */
+
+    /* } */
   }

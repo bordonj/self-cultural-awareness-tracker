@@ -1,14 +1,14 @@
 import React from 'react'
 import Flashcard from './Flashcard'
-import { Card } from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
 
 const FlashcardList = ({ selectedLesson, setSelectedLesson }) => {
   const entries = Object.entries(selectedLesson);
   console.log('selectedLesson', selectedLesson)
-  const variant = 'Dark';
+
   return (
     <>
-    <button onClick={() => setSelectedLesson(null)}>go back</button>
+    <Button variant="dark" onClick={() => setSelectedLesson(null)}>go back</Button>
       <div className="card-grid flexbox-container"> 
         {entries.map(flashcard => {
           if (flashcard[0] === "id") {
@@ -21,9 +21,14 @@ const FlashcardList = ({ selectedLesson, setSelectedLesson }) => {
               >
                 <Card.Header as="h5">Introduction</Card.Header>
                 <Card.Body>
-                  <Card.Title>Read more about ({flashcard[0]})</Card.Title>
+                  <Card.Title>About {selectedLesson['id']}</Card.Title>
                   <Card.Text>
-                    {flashcard[1]}
+                    {Array.isArray(flashcard[1]) && flashcard[1].map(par => (
+                      <p>
+                        {par}
+                      </p>
+                    ))}
+                    {typeof flashcard[1] === "string" && <p>{flashcard[1]}</p>}
                   </Card.Text>
                 </Card.Body>
               </Card>
