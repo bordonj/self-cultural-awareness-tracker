@@ -16,7 +16,7 @@ b {
 }
 .navbar {
   color: #fff;
-  padding: 20px 40px;
+  /* padding: 20px 10px; */
   display: flex;
   align-items: center; 
   /* vertically center! line 13 */
@@ -28,7 +28,7 @@ b {
 #header {
   color: #eec232;
   font-size: x-large;
-  padding-top: 8px;
+  /* padding-top: 8px; */
 }
 .navbar .login {
   margin-left: auto;
@@ -42,7 +42,7 @@ b {
   text-decoration: none;
   padding: 6px;
   color: #fff;
-  font-size: 15pt;
+  font-size: 13pt;
 }
 .navbar a:hover {
   color: #faa361;
@@ -245,19 +245,19 @@ input[type="file"] {
 .card-grid {
   margin: 10px auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px;
 }
 .grid{
-  margin: 10px auto;
+  margin: 5px auto;
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 20px;
+  grid-gap: 10px;
 }
 .grid-wrap{
   overflow: hidden;
   height: 0;
-  padding: 10% 0;
+  padding: 5% 0;
   /* padding controls height, will always be perfectly square regardless of width */
   position: relative;
   opacity: 0.8;
@@ -269,6 +269,13 @@ input[type="file"] {
   position: absolute;
   top: 0;
   left: 0;
+}
+.grid-item h1 {
+  transition-duration: .3s;
+}
+.grid-item h1:hover {
+  color: #fff8dc;
+  cursor: pointer;
 }
 
 /* modal styles */

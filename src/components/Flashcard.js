@@ -5,7 +5,7 @@ const Flashcard = ({ flashcard }) => {
   console.log(flip);
   return (
     <div 
-      className={ `flashcard ${flip ? `flip` : ''}`}
+      className={ `flashcard ${flip ? `flip` : ''} flex-item`}
       onClick={() => setFlip(!flip)}
     >
       <div className="front">

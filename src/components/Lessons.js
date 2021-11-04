@@ -31,7 +31,7 @@ const Lessons = () => {
       <div className="grid">
         { docs && docs.map ((doc, idx) => (
           <motion.div className="grid-wrap" key={doc.id}
-            whileHover={{ opacity: 1}}
+            whileHover={{ opacity: 1 }}
             layout
             onClick={() => setSelectedLesson(docs[idx])}
           >
