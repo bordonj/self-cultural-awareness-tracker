@@ -117,14 +117,17 @@
   /* CSS rules here for screens lower than 750px */
   .flexbox-container {
     display: flex;
-    flex-flow: row wrap;
-    /* flex: 1 1 32%; */
-    justify-content: space-around;
-    column-gap: 2rem;
+    /* flex-direction: column; */
+    flex-flow: column wrap;
+    /* flex: 1 1 100%; */
+    justify-content: center;
+    /* column-gap: 2rem; */
   }
     .flex-item {
-      flex-basis: 350px;
-      height: 200px;
+      /* flex-basis: 100%; */
+      max-width: 400px;
+      width: 100%;
+      flex-basis: 200px;
     }
     /* .card-grid { */
       /* grid-template-columns: repeat(1, 100%); */
