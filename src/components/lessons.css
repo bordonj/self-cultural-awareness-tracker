@@ -25,7 +25,7 @@
 
 .flashcard, .front, .back {
   /* width: 20rem; */
-  height: 17rem;
+  height: 200px;
 }
 
 .flashcard:hover {
@@ -74,6 +74,11 @@
   padding: 1rem;
   backface-visibility: hidden;
   text-align: center;
+}
+
+.flashcard-p {
+  display: block;
+  margin-bottom: 10px;
 }
 
 /* .flashcard .back {

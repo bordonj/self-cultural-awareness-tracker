@@ -253,11 +253,11 @@ input[type="file"] {
 .grid{
   margin: 5px auto;
   display: grid;
-  grid-template-columns: 1fr;
+  /* grid-template-columns: repeat(auto-fill); */
   grid-gap: 10px;  
 }
 .grid-wrap{
-  overflow: hidden;
+  /* overflow: auto; */
   height: 0;
   padding: 5% 0;
   /* padding controls height, will always be perfectly square regardless of width */

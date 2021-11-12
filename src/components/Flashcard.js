@@ -12,7 +12,12 @@ const Flashcard = ({ flashcard }) => {
         {flashcard[0]}
       </div>
       <div className="back">
-        {flashcard[1]}
+        {Array.isArray(flashcard[1]) && flashcard[1].map((par, idx) => (
+          <div className="flashcard-p" key={idx}>
+            {par}
+          </div>
+        ))}
+        {typeof flashcard[1] === "string" && <p>{flashcard[1]}</p>}
       </div>
     </div>
   )

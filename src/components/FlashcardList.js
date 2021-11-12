@@ -10,25 +10,25 @@ const FlashcardList = ({ selectedLesson, setSelectedLesson }) => {
     <>
     <Button variant="dark" onClick={() => setSelectedLesson(null)}>go back</Button>
       <div className="card-grid flexbox-container"> 
-        {entries.map(flashcard => {
+        {entries.map((flashcard, idx) => {
           if (flashcard[0] === "id") {
-            return <hr />
+            return;
           }
           if (flashcard[0] === 'Intro') {
             return (
-              <Card 
+              <Card key={idx}
                 className="mb-2 intro"
               >
                 <Card.Header as="h5">Introduction</Card.Header>
                 <Card.Body>
                   <Card.Title>About {selectedLesson['id']}</Card.Title>
                   <Card.Text>
-                    {Array.isArray(flashcard[1]) && flashcard[1].map(par => (
-                      <p>
+                    {Array.isArray(flashcard[1]) && flashcard[1].map((par, idx) => (
+                      <span className='flashcard-p' key={idx}>
                         {par}
-                      </p>
+                      </span>
                     ))}
-                    {typeof flashcard[1] === "string" && <p>{flashcard[1]}</p>}
+                    {typeof flashcard[1] === "string" && <span>{flashcard[1]}</span>}
                   </Card.Text>
                 </Card.Body>
               </Card>
