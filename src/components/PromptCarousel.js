@@ -15,7 +15,8 @@ import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
-import Collapse from '@material-ui/core/Collapse';
+// import Collapse from '@material-ui/core/Collapse';
+import { Collapse } from "@mui/material";
 
 const PromptCarousel = () => {
   const  { docs, loading } = useFetchLessons('prompts');
@@ -24,14 +25,13 @@ const PromptCarousel = () => {
 
   const Practice = () => {
     const [isChecked, setIsChecked] = React.useState(false);
-    
     return (
       <div>
         <FormControlLabel
           control={<Switch checked={isChecked} onChange={() => {
             setIsChecked((prev) => !prev);
           }} />}
-          label="Having difficulty? Toggle to show prompts."
+          label="Having difficulty thinking? Toggle to show prompts."
         />
         <div style={{ }}>
           <Collapse in={isChecked}>
@@ -72,7 +72,7 @@ const PromptCarousel = () => {
                 bgcolor: 'background.default',
               }}
             >
-              <Typography>Prompts</Typography>
+              <Typography style={{margin: 'auto', width: '100%'}}>Prompts</Typography>
             </Paper>
             <Box sx={{ height: 255, width: '100%', p: 2 }}>
               {console.log('active step', activeStep)}
@@ -125,7 +125,6 @@ const PromptCarousel = () => {
           </div>
         }
         {Practice()}
-        {TextMobileStepper()}
   </>
   );
 }
