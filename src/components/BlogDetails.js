@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 import { Card, Spinner } from "react-bootstrap";
 import Edit from "./Edit";
 
-
 const BlogDetails = () => {
   const [editForm, setEditForm] = useState(false);
   const { id } = useParams(); 
@@ -25,46 +24,74 @@ const BlogDetails = () => {
   
       history.push('/entries');
     }
-
   }
-
 
   if (editForm) {
     return (
       <Edit blog={doc}/>
     )
   }
-  return (
-    <>
-      { loading && 
-        <div className="spinner-parent">
-          <Spinner animation="border" role="status">
-            <span className="visually-hidden"></span>
-          </Spinner>
-        </div>
-      }
-      { !loading &&
-        <Card>
-          <div className="blog-details">
-            <h1><b>Title:</b> {doc.title}</h1>
-            <p><b>Incident:</b> {doc.incident}</p>
-            <p><b>Feeling:</b> {doc.feeling}</p>
-            <p><b>Reaction:</b> {doc.reaction}</p>
-            <p><b>Other side:</b> {doc.otherside}</p>
-            <p><b>Reflection:</b> {doc.reflection}</p>
-            <p><b>Lessons learned:</b> {doc.lessonslearned}</p>
-            <div className="details-links">
-              <Link to="/entries">
-                <button className="d-link">Back to Entries</button>
-              </Link>
-              <button className="d-link" onClick={() => setEditForm(true)}>Edit Entry</button>
-              <button className="d-link" onClick={handleDelete}>Delete Entry</button>
-            </div>
+  if (doc.incident) {
+    return (
+      <>
+        { loading && 
+          <div className="spinner-parent">
+            <Spinner animation="border" role="status">
+              <span className="visually-hidden"></span>
+            </Spinner>
           </div>
-        </Card>
-      }  
-    </>
-  );
+        }
+        { !loading &&
+          <Card>
+            <div className="blog-details">
+              <h1><b>Title:</b> {doc.title}</h1>
+              <p><b>Incident:</b> {doc.incident}</p>
+              <p><b>Feeling:</b> {doc.feeling}</p>
+              <p><b>Reaction:</b> {doc.reaction}</p>
+              <p><b>Other side:</b> {doc.otherside}</p>
+              <p><b>Reflection:</b> {doc.reflection}</p>
+              <p><b>Lessons learned:</b> {doc.lessonslearned}</p>
+              <div className="details-links">
+                <Link to="/entries">
+                  <button className="d-link">Back to Entries</button>
+                </Link>
+                <button className="d-link" onClick={() => setEditForm(true)}>Edit Entry</button>
+                <button className="d-link" onClick={handleDelete}>Delete Entry</button>
+              </div>
+            </div>
+          </Card>
+        }  
+      </>
+    );
+  } else {
+    return (
+      <>
+        { loading && 
+          <div className="spinner-parent">
+            <Spinner animation="border" role="status">
+              <span className="visually-hidden"></span>
+            </Spinner>
+          </div>
+        }
+        { !loading &&
+          <Card>
+            <div className="blog-details">
+              <h1><b>Title:</b> {doc.title}</h1>
+              <p><b>Feeling:</b> {doc.feeling}</p>
+              <p><b>Reflection:</b> {doc.reflection}</p>
+              <div className="details-links">
+                <Link to="/entries">
+                  <button className="d-link">Back to Entries</button>
+                </Link>
+                <button className="d-link" onClick={() => setEditForm(true)}>Edit Entry</button>
+                <button className="d-link" onClick={handleDelete}>Delete Entry</button>
+              </div>
+            </div>
+          </Card>
+        }  
+      </>
+    )
+  }
 }
 
 export default BlogDetails;
