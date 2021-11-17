@@ -23,7 +23,7 @@ const PromptCarousel = () => {
   console.log(docs)
   console.log(loading)
 
-  const Practice = () => {
+  const Prompts = () => {
     const [isChecked, setIsChecked] = React.useState(false);
     return (
       <div>
@@ -124,7 +124,7 @@ const PromptCarousel = () => {
             </Spinner>
           </div>
         }
-        {Practice()}
+        {Prompts()}
   </>
   );
 }
