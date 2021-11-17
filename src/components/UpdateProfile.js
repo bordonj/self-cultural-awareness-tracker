@@ -99,68 +99,68 @@ const UpdateProfile = ({ setEditProfile, profile }) => {
               <Button onClick={() => setProfilePic('https://firebasestorage.googleapis.com/v0/b/know-myself-76d29.appspot.com/o/anon.jpg?alt=media&token=da271531-5d56-41cf-8719-fce913be9803')}>Delete Photo</Button>
             </Form.Group>
             <Form.Group id="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" ref={emailRef} defaultValue={currentUser.email} required />
+              <Form.Label><b>Email:</b> {currentUser.email}</Form.Label>
+              {/* <Form.Control type="email" ref={emailRef} defaultValue={currentUser.email} required /> */}
             </Form.Group>
             <Form.Group id="password">
-              <Form.Label>Password</Form.Label>
+              <Form.Label><b>Password</b></Form.Label>
               <Form.Control type="password" ref={passwordRef} placeholder="Leave blank to keep the same"/>
             </Form.Group>
             <Form.Group id="password-confirm">
-              <Form.Label>Password Confirmation</Form.Label>
+              <Form.Label><b>Password Confirmation</b></Form.Label>
               <Form.Control type="password" ref={passwordConfirmRef} placeholder="Leave blank to keep the same"/>
             </Form.Group>
             <br/>
             <h2 style={{textAlign: 'center'}}>Demographics</h2>
             <Form.Group id="name">
-              <Form.Label>Name</Form.Label>
+              <Form.Label><b>Name</b></Form.Label>
               <Form.Control type="text" value={name} onChange={(e) => setName(e.target.value)} />
             </Form.Group>
             <Form.Group id="age">
-              <Form.Label>Age</Form.Label>
+              <Form.Label><b>Age</b></Form.Label>
               <Form.Control type="text" value={age} onChange={(e) => setAge(e.target.value)} />
             </Form.Group>
             <Form.Group id="race">
-              <Form.Label>Race</Form.Label>
+              <Form.Label><b>Race</b></Form.Label>
               <Form.Control type="text" value={race} onChange={(e) => setRace(e.target.value)} />
             </Form.Group>
             <Form.Group id="ethnicity">
-              <Form.Label>Ethnicity</Form.Label>
+              <Form.Label><b>Ethnicity</b></Form.Label>
               <Form.Control type="text" value={ethnicity} onChange={(e) => setEthnicity(e.target.value)} />
             </Form.Group>
             <Form.Group id="gender">
-              <Form.Label>Gender</Form.Label>
+              <Form.Label><b>Gender</b></Form.Label>
               <Form.Control type="text" value={gender} onChange={(e) => setGender(e.target.value)} />
             </Form.Group>
             <Form.Group id="sexuality">
-              <Form.Label>Sexuality</Form.Label>
+              <Form.Label><b>Sexuality</b></Form.Label>
               <Form.Control type="text" value={sexuality} onChange={(e) => setSexuality(e.target.value)} />
             </Form.Group>
             <Form.Group id="ability">
-              <Form.Label>Ability</Form.Label>
+              <Form.Label><b>Ability</b></Form.Label>
               <Form.Control type="text" value={ability} onChange={(e) => setAbility(e.target.value)} />
             </Form.Group>
             <Form.Group id="language">
-              <Form.Label>Language(s)</Form.Label>
+              <Form.Label><b>Language(s)</b></Form.Label>
               <Form.Control type="text" value={language} onChange={(e) => setLanguage(e.target.value)} />
             </Form.Group>
             <Form.Group id="occupation">
-              <Form.Label>Occupation</Form.Label>
+              <Form.Label><b>Occupation</b></Form.Label>
               <Form.Control type="text" value={occupation} onChange={(e) => setOccupation(e.target.value)} />
             </Form.Group>
             <Form.Group id="religion">
-              <Form.Label>Religion</Form.Label>
+              <Form.Label><b>Religion</b></Form.Label>
               <Form.Control type="text" value={religion} onChange={(e) => setReligion(e.target.value)} />
             </Form.Group>
             <Form.Group id="nationality">
-              <Form.Label>Nationality</Form.Label>
+              <Form.Label><b>Nationality</b></Form.Label>
               <Form.Control type="text" value={nationality} onChange={(e) => setNationality(e.target.value)} />
             </Form.Group>
             <Form.Group id="immstatus">
-              <Form.Label>Immigrant Status</Form.Label>
+              <Form.Label><b>Immigrant Status</b></Form.Label>
               <Form.Control type="text" value={immstatus} onChange={(e) => setImmstatus(e.target.value)} />
             </Form.Group>
-            <Button disabled={loading} className="w-100" type="submit">
+            <Button disabled={loading} type="submit">
               Update Profile
             </Button>
           </Form>
