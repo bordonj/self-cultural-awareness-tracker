@@ -115,9 +115,23 @@ b {
 .create h2 {
   font-size: 20px;
   color: #ff6f00;
-  text-shadow: 2px 2px 2px rgba(255, 239, 117, 0.63);
+  background-color: rgb(79, 79, 79);
+  padding: 5px;
+  /* text-shadow: 2px 2px 2px rgba(255, 239, 117, 0.63); */
   margin-bottom: 30px;
 }
+.create h2:hover {
+  font-size: 20px;
+  color: #ff6f00;
+  background-color: rgb(225, 225, 225);
+  padding: 5px;
+  /* text-shadow: 2px 2px 2px rgba(255, 239, 117, 0.63); */
+  margin-bottom: 30px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px #eec232;
+}
+
+
 .create input, .create textarea, .create select {
   width: 100%;
   padding: 6px 10px;
