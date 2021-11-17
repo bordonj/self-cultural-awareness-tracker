@@ -13,66 +13,40 @@ import Button from '@mui/material/Button';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Switch from '@material-ui/core/Switch';
+import Collapse from '@material-ui/core/Collapse';
+
 const PromptCarousel = () => {
   const  { docs, loading } = useFetchLessons('prompts');
   console.log(docs)
   console.log(loading)
 
-  useEffect(() => {
-  }, [docs])
+  const Practice = () => {
+    const [isChecked, setIsChecked] = React.useState(false);
+    
+    return (
+      <div>
+        <FormControlLabel
+          control={<Switch checked={isChecked} onChange={() => {
+            setIsChecked((prev) => !prev);
+          }} />}
+          label="Having difficulty? Toggle to show prompts."
+        />
+        <div style={{ }}>
+          <Collapse in={isChecked}>
+            <Paper
+              elevation={5}
+              style={{ width: '100%'}} >
+              {TextMobileStepper()}
+            </Paper>
+          </Collapse>
+        </div>
+      </div>
+    );
+  }
 
-  const showCarousel = () => {
-    console.log('1 show carousel')
-    if (docs) {
-      return (
-        <>
-        <Carousel>
-
-        { docs[2].prompts.map((prompt, idx) => {
-          return (
-            <Carousel.Item key={idx}>
-              {console.log('INSIDE SHOWCAROUSEL', prompt)}
-                <img
-                  className="d-block w-100"
-                  src='https://images.pexels.com/photos/242236/pexels-photo-242236.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
-                  alt="First slide"
-                />
-                <Carousel.Caption>
-                  <h5>{prompt}</h5>
-                  <p>Prompt {idx + 1}</p>
-                </Carousel.Caption>
-              </Carousel.Item>
-          )
-        })}
-        </Carousel>
-      </>
-      )
-    }
-  };
-
-  const steps = [
-    {
-      label: 'Select campaign settings',
-      description: `For each ad campaign that you create, you can control how much
-                you're willing to spend on clicks and conversions, which networks
-                and geographical locations you want your ads to show on, and more.`,
-    },
-    {
-      label: 'Create an ad group',
-      description:
-        'An ad group contains one or more ads which target a shared set of keywords.',
-    },
-    {
-      label: 'Create an ad',
-      description: `Try out different ad text to see what brings in the most customers,
-                and learn how to enhance your ads using features like ad extensions.
-                If you run into any problems with your ads, find out how to tell if
-                they're running and how to resolve approval issues.`,
-    },
-  ];
-  
-
-  function TextMobileStepper() {
+  const TextMobileStepper = () => {
     const theme = useTheme();
     const [activeStep, setActiveStep] = React.useState(0);
     const maxSteps = docs ? docs[2].prompts.length : 0;
@@ -98,7 +72,7 @@ const PromptCarousel = () => {
                 bgcolor: 'background.default',
               }}
             >
-              <Typography>Having difficulty thinking? Pick a prompt.</Typography>
+              <Typography>Prompts</Typography>
             </Paper>
             <Box sx={{ height: 255, width: '100%', p: 2 }}>
               {console.log('active step', activeStep)}
@@ -150,21 +124,7 @@ const PromptCarousel = () => {
             </Spinner>
           </div>
         }
-        {/* { docs && docs[2].prompts.map((prompt, idx) => (
-          <Carousel.Item key={idx}>
-            {console.log('prompt', prompt)}
-              <img
-                className="d-block w-100"
-                src='https://images.pexels.com/photos/242236/pexels-photo-242236.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
-                alt="First slide"
-              />
-              <Carousel.Caption>
-                <h5>{prompt}</h5>
-                <p>Prompt {idx + 1}</p>
-              </Carousel.Caption>
-            </Carousel.Item>
-        ))} */}
-        {showCarousel()}
+        {Practice()}
         {TextMobileStepper()}
   </>
   );
