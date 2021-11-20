@@ -8,9 +8,7 @@ import BlogList from './components/BlogList';
 import BlogDetails from './components/BlogDetails';
 import Profile from './components/Profile';
 import Lessons from './components/Lessons';
-import Modal from './components/Modal'
 import { AuthProvider } from './contexts/AuthContext';
-import { useState } from 'react';
 
 const App = () => {
 

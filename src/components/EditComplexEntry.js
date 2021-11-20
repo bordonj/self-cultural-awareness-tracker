@@ -36,6 +36,7 @@ const EditComplexEntry = ({ blog }) => {
         <form onSubmit={handleSubmit}>
           <label>Blog Title:</label>
           <input 
+            required
             type="text" 
             placeholder="Was I in the wrong?"
             required
@@ -44,6 +45,7 @@ const EditComplexEntry = ({ blog }) => {
           />
           <label>Feeling:</label>
           <input 
+            required
             placeholder="Defensive but remorseful"
             value={feeling}
             onChange={e => setFeeling(e.target.value)}
@@ -51,30 +53,35 @@ const EditComplexEntry = ({ blog }) => {
           />
           <label>Incident:</label>
           <input
+            required
             placeholder="Being told that I was out of place with my joke"
             value={incident}
             onChange={e => setIncident(e.target.value)}
           />
           <label>Reaction:</label>
           <input
+            required
             placeholder="Initially said the other party was too sensitive"
             value={reaction}
             onChange={e => setReaction(e.target.value)}
           />
           <label>Other perspective:</label>
           <input
+            required
             placeholder="Maybe they had their reasons to find it offensive"
             value={otherside}
             onChange={e => setOtherside(e.target.value)}
           />
           <label>Reflection:</label>
           <textarea
+            required
             placeholder="I've thought more about how I could be insensitive because I've not as aware and ignorant of others feelings"
             value={reflection}
             onChange={e => setReflection(e.target.value)}
           />
           <label>Lessons learned:</label>
           <input
+            required
             placeholder="I could be less dismissive"
             value={lessonslearned}
             onChange={e => setLessonslearned(e.target.value)}

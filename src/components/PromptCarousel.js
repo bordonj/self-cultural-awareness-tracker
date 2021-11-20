@@ -1,6 +1,4 @@
-import { useState } from "react";
-import { useEffect } from "react";
-import { Carousel, Spinner } from "react-bootstrap";
+import { Spinner } from "react-bootstrap";
 import useFetchLessons from "../hooks/useFetchLessons";
 
 import * as React from 'react';

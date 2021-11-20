@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import useFetchLessons from '../hooks/useFetchLessons'
 import { motion } from 'framer-motion'
-import Modal from './Modal'
 import { Spinner } from 'react-bootstrap'
 import FlashcardList from './FlashcardList'
 import './lessons.css'
@@ -53,20 +52,5 @@ const Lessons = () => {
     )
   
 }
-
-const SAMPLE_FLASHCARDS = [
-  {
-    id: 1,
-    term: 'multiculturalism',
-    definition: 'allowing other cultures to distinctly live with others harmoniously',
-    options: [3, 2, 1]
-  },
-  {
-    id: 2,
-    term: 'racism',
-    definition: 'power and privilege benefiting one group unfairly and discriminating against others systemically',
-    options: [1, 2, 3]
-  }
-]
 
 export default Lessons
