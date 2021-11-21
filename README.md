@@ -1,6 +1,13 @@
 ## "Know Myself" - a self and cultural awareness tracker
 #### _by Jennifer Bordon_
 
+## Demo Use 
+
+If you would like to try it out yourself, please feel free to use the credentials below to log in.
+
+<a href="https://know-myself-test.web.app/">Live Site</a>
+- Username: test@test.com
+- Password: password
 ## Description
 This is an application used for the goal of helping users understand themselves, their biases, their triggers, and more better. Hopefully to become more understanding/empathic people. 
 
