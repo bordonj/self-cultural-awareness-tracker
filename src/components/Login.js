@@ -29,7 +29,7 @@ const Login = () => {
 
   return (  
     <>
-      <Card>
+      <Card className="enter">
         <Card.Body>
           <h2 className="text-center mb-4">Log In</h2>
           {error && <Alert variant="danger">{error}</Alert>}
@@ -51,7 +51,7 @@ const Login = () => {
           </div>
         </Card.Body>
       </Card>
-      <div className="w-100 text-center mt-2">
+      <div className="text-center mt-2">
         Need an account? <Link to="/signup">Sign Up</Link>
       </div>
     </>

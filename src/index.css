@@ -169,6 +169,9 @@ b {
   margin: 10px;
 }
 /* login signup */
+input {
+  min-width: 140px;
+}
 .card {
   background-color: rgba(255, 255, 255, 0.719);
   border-radius: 2%;
@@ -208,6 +211,25 @@ a:hover {
   /* CSS rules here for screens lower than 750px */
     .link {
       display: block;
+    }
+    .content {
+      /* max-width: 900px;
+      min-width: 400px;
+      width: 80%;
+      margin: 40px auto; */
+      /* add auto above to "centralize" it */
+      max-width:max-content;
+      padding: 0;
+      min-width: 100%;
+    }
+    /* .card-body {
+      margin: 0
+    } */
+    .card {
+      background-color: rgba(255, 255, 255, 0.719);
+      border-radius: 2%;
+      /* padding: 5%; */
+      /* margin: 3px; */
     }
   }
 
