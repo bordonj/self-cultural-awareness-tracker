@@ -51,13 +51,13 @@ const Signup = () => {
               <Form.Label>Password Confirmation</Form.Label>
               <Form.Control type="password" ref={passwordConfirmRef} required />
             </Form.Group>
-            <Button disabled={loading} className="w-100" type="submit">
+            <Button disabled={loading} style={{display: 'block', margin: '10px auto', width: '100px'}} type="submit">
               Sign Up
             </Button>
           </Form>
         </Card.Body>
       </Card>
-      <div className="w-100 text-center mt-2">
+      <div className="text-center mt-2">
         Already have an account? <Link to="/login">Log in</Link>
       </div>
     </>

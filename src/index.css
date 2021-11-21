@@ -115,9 +115,23 @@ b {
 .create h2 {
   font-size: 20px;
   color: #ff6f00;
-  text-shadow: 2px 2px 2px rgba(255, 239, 117, 0.63);
+  background-color: rgb(79, 79, 79);
+  padding: 5px;
+  /* text-shadow: 2px 2px 2px rgba(255, 239, 117, 0.63); */
   margin-bottom: 30px;
 }
+.create h2:hover {
+  font-size: 20px;
+  color: #ff6f00;
+  background-color: rgb(225, 225, 225);
+  padding: 5px;
+  /* text-shadow: 2px 2px 2px rgba(255, 239, 117, 0.63); */
+  margin-bottom: 30px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px #eec232;
+}
+
+
 .create input, .create textarea, .create select {
   width: 100%;
   padding: 6px 10px;
@@ -145,8 +159,6 @@ b {
 }
 
 /* home styles */
-.home {
-}
 
 /* details */
 .details-links {
@@ -157,6 +169,9 @@ b {
   margin: 10px;
 }
 /* login signup */
+input {
+  min-width: 140px;
+}
 .card {
   background-color: rgba(255, 255, 255, 0.719);
   border-radius: 2%;
@@ -196,6 +211,25 @@ a:hover {
   /* CSS rules here for screens lower than 750px */
     .link {
       display: block;
+    }
+    .content {
+      /* max-width: 900px;
+      min-width: 400px;
+      width: 80%;
+      margin: 40px auto; */
+      /* add auto above to "centralize" it */
+      max-width:max-content;
+      padding: 0;
+      min-width: 100%;
+    }
+    /* .card-body {
+      margin: 0
+    } */
+    .card {
+      background-color: rgba(255, 255, 255, 0.719);
+      border-radius: 2%;
+      /* padding: 5%; */
+      /* margin: 3px; */
     }
   }
 

@@ -22,8 +22,6 @@ const useFetchLessons = (collection) => {
     // return unsub;
   }, [collection])
 
-  console.log('docs', docs);
-
   return { docs, loading };
 }
 

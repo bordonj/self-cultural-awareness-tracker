@@ -1,18 +1,19 @@
 import React from 'react'
 import Flashcard from './Flashcard'
-import { Card, Button } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
+import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
+
 
 const FlashcardList = ({ selectedLesson, setSelectedLesson }) => {
   const entries = Object.entries(selectedLesson);
-  console.log('selectedLesson', selectedLesson)
 
   return (
     <>
-    <Button variant="dark" onClick={() => setSelectedLesson(null)}>go back</Button>
+    <button className="btn btn-warning" onClick={() => setSelectedLesson(null)}><KeyboardBackspaceIcon /></button>
       <div className="card-grid flexbox-container"> 
         {entries.map((flashcard, idx) => {
           if (flashcard[0] === "id") {
-            return;
+            return null;
           }
           if (flashcard[0] === 'Intro') {
             return (
