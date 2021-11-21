@@ -5,7 +5,7 @@
 
 If you would like to try it out yourself, please feel free to use the credentials below to log in.
 
-<a href="https://know-myself-test.web.app/">Live Site</a>
+<a href="https://know-myself.bordonj.com/">Live Site</a>
 - Username: test@test.com
 - Password: password
 ## Description
