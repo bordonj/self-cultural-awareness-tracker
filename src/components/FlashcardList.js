@@ -1,6 +1,6 @@
 import React from 'react'
 import Flashcard from './Flashcard'
-import { Card, Button } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 
 
@@ -9,11 +9,11 @@ const FlashcardList = ({ selectedLesson, setSelectedLesson }) => {
 
   return (
     <>
-    <button class="btn btn-warning" onClick={() => setSelectedLesson(null)}><KeyboardBackspaceIcon /></button>
+    <button className="btn btn-warning" onClick={() => setSelectedLesson(null)}><KeyboardBackspaceIcon /></button>
       <div className="card-grid flexbox-container"> 
         {entries.map((flashcard, idx) => {
           if (flashcard[0] === "id") {
-            return;
+            return null;
           }
           if (flashcard[0] === 'Intro') {
             return (

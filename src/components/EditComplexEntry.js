@@ -20,20 +20,20 @@ const EditComplexEntry = ({ blog }) => {
   const { uid } = currentUser;
   const { id } = useParams(); 
 
-  const feelingsArr = [
-    'Happy',
-    'Surprised',
-    'Bad',
-    'Afraid',
-    'Angry',
-    'Disgusted',
-    'Apprehensive',
-    'Peaceful',
-    'Frustrated',
-    'Resentful',
-  ]
-
   useEffect(() => {
+    const feelingsArr = [
+      'Happy',
+      'Surprised',
+      'Bad',
+      'Afraid',
+      'Angry',
+      'Disgusted',
+      'Apprehensive',
+      'Peaceful',
+      'Frustrated',
+      'Resentful',
+    ];
+    
     if (blog.feeling === 'other' || !feelingsArr.includes(feeling)) {
       setOtherFeeling(true)
       setFeeling('other');
