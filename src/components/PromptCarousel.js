@@ -18,8 +18,6 @@ import { Collapse } from "@mui/material";
 
 const PromptCarousel = () => {
   const  { docs, loading } = useFetchLessons('prompts');
-  console.log(docs)
-  console.log(loading)
 
   const Prompts = () => {
     const [isChecked, setIsChecked] = React.useState(false);
@@ -73,8 +71,6 @@ const PromptCarousel = () => {
               <Typography style={{margin: 'auto', width: '100%'}}>Prompts</Typography>
             </Paper>
             <Box sx={{ height: 255, width: '100%', p: 2 }}>
-              {console.log('active step', activeStep)}
-              {console.log(docs[2].prompts)}
               {docs[2].prompts[activeStep]}
             </Box>
             <MobileStepper

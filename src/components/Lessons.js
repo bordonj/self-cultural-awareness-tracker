@@ -6,12 +6,9 @@ import FlashcardList from './FlashcardList'
 import './lessons.css'
 
 const Lessons = () => {
-  // const [flashcards, setFlashcards] = useState(SAMPLE_FLASHCARDS);
   const  { docs, loading } = useFetchLessons('lessons');
   const [selectedLesson, setSelectedLesson] = useState(null);
-  console.log('selectedLesson', selectedLesson);
-  console.log('lessons', docs);
-  console.log('setSelectedLesson', setSelectedLesson);
+
   if (selectedLesson) {
     return (
       <FlashcardList selectedLesson={selectedLesson} setSelectedLesson={setSelectedLesson}/>

@@ -34,7 +34,6 @@ const EditComplexEntry = ({ blog }) => {
   ]
 
   useEffect(() => {
-    console.log(!feelingsArr.includes(feeling))
     if (blog.feeling === 'other' || !feelingsArr.includes(feeling)) {
       setOtherFeeling(true)
       setFeeling('other');

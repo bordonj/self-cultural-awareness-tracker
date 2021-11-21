@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 
 const Flashcard = ({ flashcard }) => {
   const [flip, setFlip] = useState(false);
-  console.log(flip);
   return (
     <div 
       className={ `flashcard ${flip ? `flip` : ''} flex-item`}

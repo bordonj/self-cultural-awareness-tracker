@@ -10,7 +10,6 @@ const Edit = ({blog}) => {
   const history = useHistory();
 
   useEffect(() => {
-    console.log('blog', blog)
     if (blog.incident) {
       setAction('Update simple Blog')
     } else {

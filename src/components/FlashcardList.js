@@ -6,7 +6,6 @@ import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 
 const FlashcardList = ({ selectedLesson, setSelectedLesson }) => {
   const entries = Object.entries(selectedLesson);
-  console.log('selectedLesson', selectedLesson)
 
   return (
     <>
