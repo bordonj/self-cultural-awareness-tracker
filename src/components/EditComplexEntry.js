@@ -66,7 +66,6 @@ const EditComplexEntry = ({ blog }) => {
         <form onSubmit={handleSubmit}>
           <label>Blog Title:</label>
           <input 
-            required
             type="text" 
             placeholder="Was I in the wrong?"
             required
