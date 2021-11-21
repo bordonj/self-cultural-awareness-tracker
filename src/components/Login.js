@@ -42,11 +42,11 @@ const Login = () => {
               <Form.Label>Password</Form.Label>
               <Form.Control type="password" ref={passwordRef} required />
             </Form.Group>
-            <Button disabled={loading} className="w-100" type="submit">
+            <Button disabled={loading} style={{display: 'block', margin: '10px auto', width: '100px'}} type="submit">
               Log In 
             </Button>
           </Form>
-          <div className="w-100 text-center mt-3">
+          <div className="text-center mt-3">
             <Link to="/forgot-password">Forgot Password?</Link>
           </div>
         </Card.Body>
