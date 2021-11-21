@@ -23,6 +23,7 @@ User stories:
 - React JS:
   - React Hooks, functional components
 - CSS
+- MUI (Material UI)
 - Bootstrap/react-bootstrap
 - React Router
 - NPM/webpack/ESLint
