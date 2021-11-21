@@ -42,7 +42,7 @@ const EditComplexEntry = ({ blog }) => {
       setOtherFeeling(false);
       setOFeeling('');
     }
-  }, [feeling])
+  }, [feeling, blog.feeling])
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -73,7 +73,7 @@ const EditComplexEntry = ({ blog }) => {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
-          <label>Feeling: (<a href="https://firebasestorage.googleapis.com/v0/b/know-myself-76d29.appspot.com/o/feelings.png?alt=media&token=2eee0d5f-e9aa-485c-aa67-0f0676dfe5eb" target="_blank">Click for Feelings Wheel</a>)</label>
+          <label>Feeling: (<a href="https://firebasestorage.googleapis.com/v0/b/know-myself-76d29.appspot.com/o/feelings.png?alt=media&token=2eee0d5f-e9aa-485c-aa67-0f0676dfe5eb" target="_blank" rel="noreferrer">Click for Feelings Wheel</a>)</label>
           <select
             placeholder="Defensive but remorseful"
             value={feeling}
