@@ -33,7 +33,6 @@ const Edit = ({blog}) => {
       <button id="back" onClick={() => history.push('/entries')}>< KeyboardBackspaceIcon/></button>
       <div className="create">
         <h2 onClick={onClickAction}>{action}</h2>
-        <br/>
         { !simpleEntry && <EditComplexEntry blog={blog}/>}
         { simpleEntry && <EditSimpleEntry  blog={blog}/>}
       </div>
